@@ -1,4 +1,4 @@
-name: Build and Deploy to FTP
+name: Build and Deploy via SFTP
 
 on:
   push:
@@ -42,17 +42,13 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.SITE_URL || 'https://ki.indigolf.de' }}
         run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy via SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: ./public_html/ki/
-          # Don't delete existing files not in the build (protects .htaccess etc)
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+          port: 22
+          source: ./out/*
+          target: public_html/ki/
+          strip_components: 1
