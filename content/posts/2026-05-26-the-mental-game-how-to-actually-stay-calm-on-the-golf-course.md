@@ -1,5 +1,5 @@
 ---
-title: "The Mental Game: How to Actually Stay Calm on the Golf Course (Not Just "Think Positive")"
+title: "The Mental Game: How to Actually Stay Calm on the Golf Course (Not Just \"Think Positive\")"
 date: "2026-05-26"
 excerpt: "Most mental game advice tells you to 'stay positive' and 'breathe deeply' — then leaves you standing over a 4-foot putt with your hands shaking. This guide goes deeper: specific techniques, pre-shot routines, and in-the-moment tools that actually work when the pressure hits."
 category: "Beginner Basics"

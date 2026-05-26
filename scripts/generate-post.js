@@ -245,7 +245,7 @@ Remember to use the exact output format with ---FRONTMATTER--- and ---CONTENT---
   const yamlTags = tagsArray.map(t => `  - "${t}"`).join('\n')
 
   const markdownContent = `---
-title: "${title}"
+title: "${title.replace(/"/g, '\\"')}"
 date: "${dateStr}"
 excerpt: "${excerpt.replace(/"/g, "'")}"
 category: "${postCategory}"
