@@ -1,0 +1,59 @@
+name: Generate Daily Golf Post
+
+on:
+  schedule:
+    # Run every day at 9:00 AM UTC
+    - cron: '0 9 * * *'
+  # Allow manual trigger from GitHub Actions UI
+  workflow_dispatch:
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate new blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.SITE_URL || 'https://indigolf.de' }}
+          AMAZON_ASSOCIATE_TAG: ${{ secrets.AMAZON_ASSOCIATE_TAG || 'indigolf-20' }}
+        run: node scripts/generate-post.js
+
+      - name: Check if new post was created
+        id: check-changes
+        run: |
+          git status
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No new post generated (likely duplicate or error)"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "New post detected"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push new post
+        if: steps.check-changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "cassie@indigolf.de"
+          git config --local user.name "Cassie (IndiGolf AI)"
+          git add content/posts/
+          git commit -m "🏌️ Daily post: $(date +'%Y-%m-%d') [automated]"
+          git push

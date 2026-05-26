@@ -1,0 +1,141 @@
+.header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding: 4rem 0 3.5rem;
+  text-align: center;
+}
+
+.headerInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.searchWrap {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.search {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background: white;
+  color: var(--color-text);
+  box-shadow: var(--shadow-md);
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.search:focus {
+  box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.4), var(--shadow-md);
+}
+
+.search::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Main */
+.main {
+  padding: 2.5rem 0 5rem;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filterBtn {
+  padding: 0.5rem 1.125rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+}
+
+.filterBtn:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.filterBtn.active {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+}
+
+.count {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Empty */
+.empty {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--color-text-muted);
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.empty p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}

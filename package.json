@@ -1,0 +1,27 @@
+{
+  "name": "indigolf",
+  "version": "1.0.0",
+  "description": "IndiGolf - AI-powered golf affiliate blog",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/generate-sitemap.js && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate-post": "node scripts/generate-post.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.3",
+    "date-fns": "^3.6.0",
+    "dotenv": "^17.4.2",
+    "gray-matter": "^4.0.3",
+    "marked": "^12.0.0",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5"
+  }
+}
