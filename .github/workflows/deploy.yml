@@ -42,6 +42,15 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.SITE_URL || 'https://ki.indigolf.de' }}
         run: npm run build
 
+      - name: Create target directory via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 22
+          script: mkdir -p ~/public_html/ki
+
       - name: Deploy via SFTP
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -50,5 +59,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
           source: ./out/*
-          target: public_html/ki/
+          target: ~/public_html/ki/
           strip_components: 1
+          overwrite: true
