@@ -4,7 +4,7 @@ import SEO from '../../components/SEO'
 import { getAllPosts, getPostBySlug, getAllPostSlugs } from '../../lib/posts'
 import styles from '../../styles/Post.module.css'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://indigolf.de'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ki.indigolf.de'
 
 export default function PostPage({ post, relatedPosts }) {
   const formattedDate = post.date

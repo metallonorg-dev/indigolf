@@ -33,7 +33,7 @@ jobs:
       - name: Generate new blog post
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.SITE_URL || 'https://indigolf.de' }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.SITE_URL || 'https://ki.indigolf.de' }}
           AMAZON_ASSOCIATE_TAG: ${{ secrets.AMAZON_ASSOCIATE_TAG || 'indigolf-20' }}
         run: node scripts/generate-post.js
 
@@ -52,7 +52,7 @@ jobs:
       - name: Commit and push new post
         if: steps.check-changes.outputs.has_changes == 'true'
         run: |
-          git config --local user.email "cassie@indigolf.de"
+          git config --local user.email "cassie@ki.indigolf.de"
           git config --local user.name "Cassie (IndiGolf AI)"
           git add content/posts/
           git commit -m "🏌️ Daily post: $(date +'%Y-%m-%d') [automated]"

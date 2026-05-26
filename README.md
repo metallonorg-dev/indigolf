@@ -79,7 +79,7 @@ cp .env.example .env.local
 Edit `.env.local`:
 ```
 ANTHROPIC_API_KEY=your_key_here
-NEXT_PUBLIC_SITE_URL=https://indigolf.de
+NEXT_PUBLIC_SITE_URL=https://ki.indigolf.de
 AMAZON_ASSOCIATE_TAG=indigolf-20
 ```
 
@@ -123,7 +123,7 @@ Go to your GitHub repo → Settings → Secrets and variables → Actions, and a
 | `FTP_SERVER` | Your hosting FTP server address |
 | `FTP_USERNAME` | FTP username |
 | `FTP_PASSWORD` | FTP password |
-| `SITE_URL` | Your full site URL (https://indigolf.de) |
+| `SITE_URL` | Your full site URL (https://ki.indigolf.de) |
 | `AMAZON_ASSOCIATE_TAG` | Your Amazon Associates tag (optional) |
 
 ### Workflows

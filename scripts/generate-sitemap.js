@@ -15,7 +15,7 @@ const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://indigolf.de'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ki.indigolf.de'
 const POSTS_DIR = path.join(__dirname, '..', 'content', 'posts')
 const PUBLIC_DIR = path.join(__dirname, '..', 'public')
 

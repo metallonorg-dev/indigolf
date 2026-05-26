@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://indigolf.de/sitemap.xml
+Sitemap: https://ki.indigolf.de/sitemap.xml

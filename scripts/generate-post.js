@@ -22,7 +22,7 @@ const client = new Anthropic.default({
 
 const POSTS_DIR = path.join(__dirname, '..', 'content', 'posts')
 const AMAZON_TAG = process.env.AMAZON_ASSOCIATE_TAG || 'indigolf-20'
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://indigolf.de'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ki.indigolf.de'
 
 // Golf topics pool — Cassie picks one each day
 const TOPICS = [
