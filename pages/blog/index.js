@@ -22,7 +22,7 @@ export default function BlogIndex({ posts, categories }) {
     <>
       <SEO
         title="Golf Blog — Tips, Reviews & Guides"
-        description="Browse all of Cassie's golf posts — equipment reviews, swing tips, course guides, and beginner basics. Updated daily with fresh golf content."
+        description="Browse all of Aria's golf posts — gear reviews, swing tips, travel stories, course guides and more. Updated daily with fresh content."
         url="/blog"
       />
 
@@ -31,7 +31,7 @@ export default function BlogIndex({ posts, categories }) {
         <div className={`container ${styles.headerInner}`}>
           <h1 className={styles.title}>Golf Blog</h1>
           <p className={styles.subtitle}>
-            Daily golf content from Cassie — equipment, technique, courses, and more
+            Golf as a lifestyle — gear, technique, travel & courses. Curated by Aria.
           </p>
 
           {/* Search */}

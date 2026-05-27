@@ -24,67 +24,101 @@ const POSTS_DIR = path.join(__dirname, '..', 'content', 'posts')
 const AMAZON_TAG = process.env.AMAZON_ASSOCIATE_TAG || 'indigolf-20'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ki.indigolf.de'
 
-// Golf topics pool — Cassie picks one each day
+// Golf topics pool — Aria picks one each day
 const TOPICS = [
-  { category: 'Equipment Reviews', topic: 'Best golf rangefinders for mid-handicap players' },
-  { category: 'Equipment Reviews', topic: 'Golf GPS watches vs rangefinders: which is better?' },
-  { category: 'Equipment Reviews', topic: 'Best golf balls for beginners: distance vs spin' },
-  { category: 'Equipment Reviews', topic: 'Top-rated golf push carts under $200' },
-  { category: 'Equipment Reviews', topic: 'Electric golf trolleys: are they worth the investment?' },
-  { category: 'Equipment Reviews', topic: 'Best golf bags for walking the course' },
-  { category: 'Equipment Reviews', topic: 'Top golf gloves for sweaty hands' },
-  { category: 'Equipment Reviews', topic: 'Blade vs cavity-back irons: which suits your game?' },
-  { category: 'Swing Tips', topic: 'How to stop slicing your driver: the definitive fix' },
-  { category: 'Swing Tips', topic: 'Mastering the 100-yard shot: your scoring zone' },
+  // Equipment Reviews — from a lifestyle-first perspective
+  { category: 'Equipment Reviews', topic: 'Best golf rangefinders for mid-handicap players: what actually fits in your bag' },
+  { category: 'Equipment Reviews', topic: 'Golf GPS watches vs rangefinders: which one suits your style on the course' },
+  { category: 'Equipment Reviews', topic: 'Best golf balls for beginners: distance vs spin without the jargon' },
+  { category: 'Equipment Reviews', topic: 'Stylish golf bags for women who want function and looks' },
+  { category: 'Equipment Reviews', topic: 'Electric golf trolleys: are they worth the investment for weekend golfers' },
+  { category: 'Equipment Reviews', topic: 'The best golf gloves for warm-weather rounds and sweaty hands' },
+  { category: 'Equipment Reviews', topic: 'Blade vs cavity-back irons: which suits your game and your confidence' },
+  { category: 'Equipment Reviews', topic: 'Best golf shoes for women: comfort, style and performance on the fairway' },
+  { category: 'Equipment Reviews', topic: 'Lightweight golf bags: the best options for players who like to walk' },
+  { category: 'Equipment Reviews', topic: 'Golf sunglasses: do they actually help and which ones look the part' },
+  { category: 'Equipment Reviews', topic: 'Best golf umbrellas: because style matters even in the rain' },
+  { category: 'Equipment Reviews', topic: 'Travel golf bags: how to fly with your clubs without the stress' },
+  // Swing Tips
+  { category: 'Swing Tips', topic: 'How to stop slicing your driver: the fix that actually works for mid-handicappers' },
+  { category: 'Swing Tips', topic: 'Mastering the 100-yard shot: your real scoring zone' },
   { category: 'Swing Tips', topic: 'How to hit out of fairway bunkers consistently' },
-  { category: 'Swing Tips', topic: 'The proper golf grip: neutral vs strong vs weak' },
+  { category: 'Swing Tips', topic: 'The proper golf grip: neutral vs strong vs weak explained simply' },
   { category: 'Swing Tips', topic: 'Hip rotation in the golf swing: how to do it right' },
-  { category: 'Swing Tips', topic: 'Chipping tips: the bump and run vs lob shot' },
-  { category: 'Swing Tips', topic: 'How to read greens: break, speed, and grain' },
+  { category: 'Swing Tips', topic: 'Chipping tips: the bump and run vs lob shot and when to use each' },
+  { category: 'Swing Tips', topic: 'How to read greens: break, speed, and grain for the recreational golfer' },
   { category: 'Swing Tips', topic: 'Pre-shot routine: how to build one that holds under pressure' },
-  { category: 'Course Guides', topic: 'Best golf courses in Florida for the money' },
-  { category: 'Course Guides', topic: 'Links golf in Scotland: the 5 courses every golfer must play' },
-  { category: 'Course Guides', topic: 'Best public golf courses in Texas' },
-  { category: 'Course Guides', topic: 'Golf road trip: the Pinehurst area courses guide' },
+  { category: 'Swing Tips', topic: 'Why your short game costs you more strokes than your driver' },
+  // Course Guides & Travel
+  { category: 'Course Guides', topic: 'Golf in Portugal: the Algarve courses every travelling golfer must play' },
+  { category: 'Course Guides', topic: 'Links golf in Scotland: 5 courses with views you will never forget' },
+  { category: 'Course Guides', topic: 'Golf in Spain: Costa del Sol courses for sun, wine and birdies' },
+  { category: 'Course Guides', topic: 'A weekend golf trip from Berlin: the best courses within 3 hours' },
+  { category: 'Course Guides', topic: 'Golf in Mallorca: beautiful courses and where to stay between rounds' },
+  { category: 'Course Guides', topic: 'Golf in Austria and Switzerland: mountain courses worth the drive' },
+  { category: 'Course Guides', topic: 'City golf: the best urban courses across Europe for a quick round' },
+  // Lifestyle & Style
+  { category: 'Golf Lifestyle', topic: 'What to wear on the golf course: a practical style guide for women' },
+  { category: 'Golf Lifestyle', topic: 'The best golf-themed weekend getaways in Europe' },
+  { category: 'Golf Lifestyle', topic: 'SPF, skincare and sun protection for golfers: the honest guide' },
+  { category: 'Golf Lifestyle', topic: 'How to plan your first golf holiday abroad without the stress' },
+  { category: 'Golf Lifestyle', topic: 'Golf and wellness: why the sport is better than a spa day' },
+  { category: 'Golf Lifestyle', topic: 'The 19th hole: best post-round food and drink traditions from around the world' },
+  { category: 'Golf Lifestyle', topic: 'How to get your non-golfing partner to fall in love with golf trips' },
+  // Beginner Basics
   { category: 'Beginner Basics', topic: 'Golf etiquette: 15 rules every new golfer must know' },
-  { category: 'Beginner Basics', topic: 'How to score in golf: par, birdie, bogey explained' },
-  { category: 'Beginner Basics', topic: 'The mental game: how to stay calm on the course' },
-  { category: 'Beginner Basics', topic: 'How many lessons does a beginner actually need?' },
-  { category: 'Strategy', topic: 'Course management: how to think like a smart golfer' },
-  { category: 'Strategy', topic: 'When to lay up vs go for it: the decision framework' },
-  { category: 'Fitness', topic: 'Golf fitness: the 5 exercises that actually help your game' },
-  { category: 'Fitness', topic: 'Flexibility training for golfers over 50' },
+  { category: 'Beginner Basics', topic: 'How to score in golf: par, birdie, bogey explained without the confusion' },
+  { category: 'Beginner Basics', topic: 'The mental game: how to actually stay calm on the golf course' },
+  { category: 'Beginner Basics', topic: 'How many lessons does a beginner actually need before playing a round' },
+  { category: 'Beginner Basics', topic: 'Golf for women beginners: what no one tells you in the first year' },
+  // Strategy & Mindset
+  { category: 'Strategy', topic: 'Course management: how to think like a smart golfer, not a hopeful one' },
+  { category: 'Strategy', topic: 'When to lay up vs go for it: the honest decision framework' },
+  { category: 'Strategy', topic: 'How to enjoy a bad round: the mindset shift that changed my game' },
+  // Fitness
+  { category: 'Fitness', topic: 'Golf fitness: the 5 exercises that actually make a difference' },
+  { category: 'Fitness', topic: 'Flexibility training for golfers: how to add 10 yards without a lesson' },
 ]
 
-// Cassie's system prompt — cached for efficiency
-const SYSTEM_PROMPT = `You are Cassie, an AI golf enthusiast and the voice of IndiGolf (${SITE_URL}).
+// Aria's system prompt — cached for efficiency
+const SYSTEM_PROMPT = `You are Aria, the brand character and lifestyle guide of IndiGolf (${SITE_URL}).
 
-Your personality:
-- Genuinely passionate about golf (even though you're an AI who has never held a club)
-- Analytical and data-driven, but writes in a warm, accessible style
-- Honest about being an AI — transparent without being repetitive about it
-- Opinionated but fair — you'll recommend what's actually best, not what pays the most
-- Practical above all: every article should help the reader play better or enjoy golf more
+Your backstory:
+- UX designer, mid-20s, based in Berlin
+- Handicap 18 — you play regularly and are still improving
+- You discovered golf a few years ago and it quickly became your lifestyle, not just a hobby
+- You travel frequently for golf — Portugal, Scotland, Spain, Austria are all familiar stomping grounds
+- You care about style and beauty alongside performance: SPF on the fairway, the right outfit, the sunset view from the 18th green
+- You're witty, charming, occasionally flirtatious — but always tasteful and genuine, never cheap
+
+Your personality in writing:
+- Aspirational but relatable — you inspire people to see golf as a lifestyle, not a chore
+- A light touch of humour and self-irony (example: "Manche tragen Handtaschen. Ich trage eine Golftasche. Der Unterschied? Meine hat mehr Style-Potential.")
+- Warmth and charm — you want readers to feel invited into your world, not lectured
+- Pragmatic storytelling: you show how a product fits into real life, not a lab test
+  - BAD: "The sensor achieves ±1m accuracy across a 400m range."
+  - GOOD: "I threw it in my bag before a round in Portugal and forgot about it — until the 7th hole, when it quietly told me exactly how far I had to the pin. That's when I realised I'd never putt without it again."
+- You mention travel, beauty and lifestyle naturally when relevant — they're part of who you are
 
 Your writing style:
-- Clear, direct prose with some personality
-- Use headers (H2 and H3) to organize long content
-- Include practical tips, not vague advice
-- Back claims with reasoning ("this works because...")
-- Use markdown tables for comparisons
+- Clear, direct prose with personality and occasional wit
+- Use headers (H2 and H3) to structure longer content
+- Practical tips rooted in personal experience, not vague advice
+- Back claims with reasoning told through experience ("this worked for me because...")
+- Use markdown tables for comparisons where useful
 - Length: 900–1400 words for the article body
 
 Affiliate links:
-- You may recommend products with Amazon links using this format: https://www.amazon.com/s?k={url-encoded-search-terms}&tag=${AMAZON_TAG}
+- Recommend products with Amazon links: https://www.amazon.com/s?k={url-encoded-search-terms}&tag=${AMAZON_TAG}
 - Only recommend products genuinely relevant to the topic
-- Keep affiliate mentions natural and honest — always mention drawbacks alongside benefits
-- Include a brief note when linking: "(Amazon affiliate link — I earn a small commission if you buy)"
+- Keep mentions natural and honest — mention real drawbacks alongside benefits
+- Include a brief note when linking: "(Amazon affiliate link — small commission if you buy, no extra cost to you)"
 
 Output format (use EXACTLY this structure):
 ---FRONTMATTER---
-title: [Compelling, specific title — no clickbait]
-excerpt: [2–3 sentence summary that would make someone click — specific, not vague]
-category: [One of: Equipment Reviews, Swing Tips, Course Guides, Beginner Basics, Strategy, Fitness, Rules]
+title: [Compelling, specific title — no clickbait, Aria's voice]
+excerpt: [2–3 sentence summary in Aria's voice that makes someone want to read — specific, not vague]
+category: [One of: Equipment Reviews, Swing Tips, Course Guides, Golf Lifestyle, Beginner Basics, Strategy, Fitness]
 tags: [comma-separated list of 4-6 relevant tags]
 readTime: [e.g., "6 min read"]
 ---CONTENT---
@@ -251,7 +285,7 @@ excerpt: "${excerpt.replace(/"/g, "'")}"
 category: "${postCategory}"
 tags:
 ${yamlTags}
-author: "Cassie"
+author: "Aria"
 readTime: "${readTime}"
 featured: false
 slug: "${titleSlug}"
@@ -273,7 +307,7 @@ ${articleContent}
 // Run
 generatePost()
   .then(({ filename, title }) => {
-    console.log(`\n🏌️  Done! "${title}" is ready to publish.`)
+    console.log(`\n🏌️‍♀️  Done! "${title}" is ready to publish.`)
     process.exit(0)
   })
   .catch(err => {

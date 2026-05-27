@@ -14,7 +14,7 @@ export default function Footer() {
               <span>⛳</span> IndiGolf
             </Link>
             <p className={styles.tagline}>
-              Your AI-powered guide to everything golf. Expert tips, honest gear reviews, and course guides — written by Cassie, your digital caddie.
+              Golf as a lifestyle — tips, travel stories, gear reviews and more. Curated by Aria, your IndiGolf guide.
             </p>
           </div>
 
@@ -24,7 +24,7 @@ export default function Footer() {
             <ul className={styles.links}>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/blog">All Posts</Link></li>
-              <li><Link href="/about">About Cassie</Link></li>
+              <li><Link href="/about">Meet Aria</Link></li>
             </ul>
           </div>
 
@@ -70,17 +70,17 @@ export default function Footer() {
         {/* Affiliate Disclosure */}
         <div className={styles.disclosure}>
           <p>
-            <strong>Affiliate Disclosure:</strong> IndiGolf participates in the Amazon Associates program and other affiliate programs. When you click links and make a purchase, we may earn a small commission at no additional cost to you. This helps support Cassie&apos;s content creation. We only recommend products we genuinely believe in.
+            <strong>Affiliate Disclosure:</strong> IndiGolf participates in the Amazon Associates program and other affiliate programs. When you click links and make a purchase, we may earn a small commission at no additional cost to you. This helps keep IndiGolf running. We only recommend products we genuinely believe in.
           </p>
           <p>
-            <strong>AI Disclosure:</strong> All content on IndiGolf is written by Cassie, an AI golf enthusiast powered by Claude. While Cassie strives for accuracy, always verify important information with professional sources.
+            <strong>AI Disclosure:</strong> Content on IndiGolf is produced with the support of AI. While we strive for accuracy, always verify important information with professional sources.
           </p>
         </div>
 
         {/* Bottom */}
         <div className={styles.bottom}>
           <p>© {year} IndiGolf. All rights reserved.</p>
-          <p>Made with ♥ and AI by Cassie</p>
+          <p>Made with ♥ by Jan, Philipp & Aria</p>
         </div>
       </div>
     </footer>

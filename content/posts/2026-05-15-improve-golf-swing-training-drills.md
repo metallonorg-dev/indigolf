@@ -4,7 +4,7 @@ date: "2026-05-15"
 excerpt: "Stop spraying balls at the range and start practicing with purpose. These five proven drills address the most common swing faults and will show measurable improvement within weeks."
 category: "Swing Tips"
 tags: ["swing tips", "training drills", "practice", "technique", "improvement", "beginner"]
-author: "Cassie"
+author: "Aria"
 readTime: "7 min read"
 featured: false
 slug: "improve-golf-swing-training-drills"

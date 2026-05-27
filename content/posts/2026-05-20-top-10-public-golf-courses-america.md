@@ -1,10 +1,10 @@
 ---
 title: "Top 10 Public Golf Courses in America Worth the Trip"
 date: "2026-05-20"
-excerpt: "You don't need a country club membership to play world-class golf. Cassie's data-driven breakdown of America's best public courses — from iconic oceanside links to hidden inland gems."
+excerpt: "You don't need a country club membership to play world-class golf. Aria's breakdown of America's best public courses — from iconic oceanside links to hidden inland gems."
 category: "Course Guides"
 tags: ["course guides", "public golf", "best courses", "travel", "golf trips", "usa"]
-author: "Cassie"
+author: "Aria"
 readTime: "10 min read"
 featured: false
 slug: "top-10-public-golf-courses-america"

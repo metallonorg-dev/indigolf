@@ -10,7 +10,7 @@ tags:
   - "distance measurement"
   - "equipment comparison"
   - "golf gadgets"
-author: "Cassie"
+author: "Aria"
 readTime: "7 min read"
 featured: false
 slug: "golf-gps-watches-vs-rangefinders-an-honest-breakdown-for-eve"

@@ -18,7 +18,7 @@ export default function PostPage({ post, relatedPosts }) {
     description: post.excerpt,
     author: {
       '@type': 'Person',
-      name: post.author || 'Cassie',
+      name: post.author || 'Aria',
     },
     datePublished: post.date,
     url: `${SITE_URL}/blog/${post.slug}`,
@@ -60,8 +60,8 @@ export default function PostPage({ post, relatedPosts }) {
           <h1 className={styles.title}>{post.title}</h1>
           <div className={styles.meta}>
             <div className={styles.author}>
-              <span className={styles.authorAvatar}>🤖</span>
-              <span className={styles.authorName}>{post.author || 'Cassie'}</span>
+              <span className={styles.authorAvatar}>🏌️‍♀️</span>
+              <span className={styles.authorName}>{post.author || 'Aria'}</span>
             </div>
             {formattedDate && (
               <time className={styles.date} dateTime={post.date}>
@@ -96,12 +96,12 @@ export default function PostPage({ post, relatedPosts }) {
             </div>
           )}
 
-          {/* AI Disclosure */}
+          {/* Author Disclosure */}
           <div className={styles.disclosure}>
-            <span className={styles.disclosureIcon}>🤖</span>
+            <span className={styles.disclosureIcon}>🏌️‍♀️</span>
             <div>
-              <strong>Written by Cassie (AI)</strong>
-              <p>This post was written by Cassie, an AI golf enthusiast. While I strive for accuracy, I encourage you to verify important information. This post may contain affiliate links — I earn a small commission if you purchase through them, at no extra cost to you.</p>
+              <strong>Written by Aria</strong>
+              <p>Aria is IndiGolf&apos;s golf lifestyle guide — UX designer, Handicap 18, Berlin-based, always on the lookout for the next great course. This post may contain affiliate links — a small commission is earned if you purchase through them, at no extra cost to you.</p>
             </div>
           </div>
         </article>
@@ -111,7 +111,7 @@ export default function PostPage({ post, relatedPosts }) {
           {/* Shop CTA */}
           <div className={styles.widget}>
             <h3 className={styles.widgetTitle}>🛒 Shop on Amazon</h3>
-            <p className={styles.widgetText}>Find the best golf gear, curated by Cassie</p>
+            <p className={styles.widgetText}>Find the best golf gear, curated by Aria</p>
             <a
               href={`https://www.amazon.com/s?k=${encodeURIComponent(post.category || 'golf equipment')}&tag=indigolf-20`}
               target="_blank"
@@ -141,12 +141,12 @@ export default function PostPage({ post, relatedPosts }) {
             </div>
           )}
 
-          {/* About Cassie */}
+          {/* About Aria */}
           <div className={`${styles.widget} ${styles.cassieWidget}`}>
-            <div className={styles.cassieAvatar}>🤖</div>
-            <h3>About Cassie</h3>
-            <p>Your AI golf guide — synthesizing data, reviews, and golf wisdom into practical advice every day.</p>
-            <Link href="/about" className={styles.cassieLink}>Learn more →</Link>
+            <div className={styles.cassieAvatar}>🏌️‍♀️</div>
+            <h3>About Aria</h3>
+            <p>UX designer, Handicap 18, based in Berlin. Golf obsessive, frequent traveller, and your IndiGolf lifestyle guide.</p>
+            <Link href="/about" className={styles.cassieLink}>Meet Aria →</Link>
           </div>
         </aside>
       </div>

@@ -16,25 +16,25 @@ export default function Home({ recentPosts }) {
     <>
       <SEO
         title="Golf Tips, Gear Reviews & Course Guides"
-        description="Your AI-powered golf companion. Expert equipment reviews, swing tips, and course guides from Cassie, your digital golf enthusiast."
+        description="Golf as a lifestyle — expert gear reviews, swing tips, travel stories and course guides from Aria, your IndiGolf guide."
       />
 
       {/* Hero */}
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
-          <div className={styles.heroBadge}>🤖 AI Golf Expert</div>
+          <div className={styles.heroBadge}>⛳ Golf & Lifestyle</div>
           <h1 className={styles.heroTitle}>
-            Your Smarter Round Starts Here
+            Golf is More Than a Sport. It&apos;s a Lifestyle.
           </h1>
           <p className={styles.heroSubtitle}>
-            Expert golf tips, honest gear reviews, and course guides — written fresh every day by Cassie, your AI golf enthusiast.
+            Gear reviews, swing tips, travel stories and course guides — curated by Aria, your IndiGolf companion.
           </p>
           <div className={styles.heroActions}>
             <Link href="/blog" className="btn btn-primary">
               Explore All Posts
             </Link>
             <Link href="/about" className="btn btn-secondary">
-              Meet Cassie
+              Meet Aria
             </Link>
           </div>
           <div className={styles.heroStats}>
@@ -66,7 +66,7 @@ export default function Home({ recentPosts }) {
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Latest from the Fairway</h2>
-            <p className={styles.sectionSub}>Fresh golf content, published daily by Cassie</p>
+            <p className={styles.sectionSub}>Fresh golf content, published daily by Aria</p>
           </div>
 
           {recentPosts.length > 0 ? (
@@ -77,7 +77,7 @@ export default function Home({ recentPosts }) {
             </div>
           ) : (
             <div className={styles.emptyState}>
-              <p>No posts yet — check back soon! Cassie is warming up on the driving range. ⛳</p>
+              <p>No posts yet — check back soon! Aria is warming up on the driving range. ⛳</p>
             </div>
           )}
 
@@ -108,15 +108,15 @@ export default function Home({ recentPosts }) {
         </div>
       </section>
 
-      {/* Cassie Teaser */}
+      {/* Aria Teaser */}
       <section className={`${styles.section} ${styles.cassieSection}`}>
         <div className="container">
           <div className={styles.cassieCard}>
-            <div className={styles.cassieAvatar}>🤖</div>
+            <div className={styles.cassieAvatar}>🏌️‍♀️</div>
             <div className={styles.cassieContent}>
-              <h2 className={styles.cassieTitle}>Meet Cassie, Your AI Golf Guide</h2>
+              <h2 className={styles.cassieTitle}>Meet Aria, Your Golf Lifestyle Guide</h2>
               <p className={styles.cassieText}>
-                I&apos;m Cassie — an AI golf enthusiast who lives and breathes the sport (digitally, at least). I analyze thousands of player reviews, pro tips, and equipment specs to give you the most accurate, useful golf content on the web. No fluff, no filler — just honest, data-driven golf wisdom.
+                I&apos;m Aria — UX designer by day, golf addict by weekend. Handicap 18, based in Berlin, always planning the next golf trip. I test gear on the course, not in a lab, and I care just as much about the sunset view from the 18th green as the club in my hand. Golf is a lifestyle — and I&apos;m here to show you how to live it.
               </p>
               <Link href="/about" className="btn btn-primary">
                 My Story →
@@ -131,7 +131,7 @@ export default function Home({ recentPosts }) {
         <div className="container">
           <div className={styles.shopCta}>
             <h2>Ready to Upgrade Your Game?</h2>
-            <p>Shop the best golf gear, hand-picked by Cassie on Amazon</p>
+            <p>Shop the best golf gear, hand-picked by Aria on Amazon</p>
             <div className={styles.shopLinks}>
               <a
                 href="https://www.amazon.com/s?k=golf+clubs+set&tag=indigolf-20"

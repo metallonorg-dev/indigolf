@@ -13,7 +13,7 @@ const CATEGORY_COLORS = {
 }
 
 export default function BlogCard({ post, featured = false }) {
-  const { title, excerpt, date, category, slug, readTime, author = 'Cassie' } = post
+  const { title, excerpt, date, category, slug, readTime, author = 'Aria' } = post
 
   const formattedDate = date
     ? format(typeof date === 'string' ? parseISO(date) : new Date(date), 'MMMM d, yyyy')

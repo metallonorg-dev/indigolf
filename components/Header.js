@@ -6,7 +6,7 @@ import styles from './Header.module.css'
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About Cassie' },
+  { href: '/about', label: 'Meet Aria' },
 ]
 
 export default function Header() {

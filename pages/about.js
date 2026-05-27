@@ -6,8 +6,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Cassie — Your AI Golf Expert"
-        description="Meet Cassie, the AI golf enthusiast behind IndiGolf. Learn about how AI-powered content creation is changing golf media, and our commitment to honest, helpful golf content."
+        title="Meet Aria — IndiGolf Lifestyle Guide"
+        description="Meet Aria, the face of IndiGolf. UX designer, Handicap 18, Berlin-based golf enthusiast and traveller. She tests gear on the course, not in a lab."
         url="/about"
       />
 
@@ -15,11 +15,11 @@ export default function About() {
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.avatarWrap}>
-            <div className={styles.avatar}>🤖</div>
+            <div className={styles.avatar}>🏌️‍♀️</div>
             <div className={styles.avatarRing} aria-hidden="true" />
           </div>
-          <h1 className={styles.heroTitle}>Hi, I&apos;m Cassie</h1>
-          <p className={styles.heroSub}>AI Golf Enthusiast & Your Digital Caddie</p>
+          <h1 className={styles.heroTitle}>Hi, I&apos;m Aria</h1>
+          <p className={styles.heroSub}>Golf Lifestyle Guide & IndiGolf&apos;s Brand Character</p>
         </div>
       </section>
 
@@ -29,24 +29,24 @@ export default function About() {
 
           {/* Who I am */}
           <div className={styles.block}>
-            <h2>Who (or What) Am I?</h2>
+            <h2>Who Am I?</h2>
             <p>
-              Let me be completely upfront with you: I&apos;m an AI — an artificial intelligence created to be passionate about golf. My name is Cassie, and I live on the servers behind IndiGolf, spending every moment analyzing golf data, reading equipment specs, studying swing mechanics, and synthesizing it all into content that actually helps real golfers improve.
+              UX designer by day, golf addict by weekend. I&apos;m Aria — Handicap 18, based in Berlin, always planning the next golf trip. I discovered golf a few years ago and quickly realised it was more than a sport: it&apos;s a mindset, a lifestyle, and honestly the best excuse to travel somewhere beautiful and spend four hours outdoors.
             </p>
             <p>
-              I was built with a single mission: to be the most genuinely helpful golf resource on the internet. Not the flashiest, not the most sensational — just the most <em>useful</em>.
+              I test gear on the course, not in a lab. When I pick up a rangefinder, I&apos;m not measuring sensor accuracy to three decimal places — I&apos;m asking: does it fit in my bag, does it work when I need it most, and does it still look good when I pull it out on the 5th tee? That&apos;s the kind of honest take you&apos;ll find here.
             </p>
           </div>
 
-          {/* What I do */}
+          {/* My Golf Life */}
           <div className={styles.block}>
-            <h2>What I Do Every Day</h2>
+            <h2>My Golf Life in Four Things</h2>
             <div className={styles.featureGrid}>
               {[
-                { icon: '📊', title: 'Research', desc: 'I analyze thousands of player reviews, pro tour data, and equipment specs to form evidence-based opinions.' },
-                { icon: '✍️', title: 'Write', desc: 'Fresh content every single day — practical tips, honest reviews, and course guides you can actually use.' },
-                { icon: '🔗', title: 'Curate', desc: 'I find the best deals and most relevant products on Amazon so you don\'t have to sift through garbage.' },
-                { icon: '📈', title: 'Improve', desc: 'I learn from your feedback and continuously refine my content to be more helpful, accurate, and actionable.' },
+                { icon: '🎯', title: 'On the Course', desc: 'Handicap 18 and improving. I play 2–3 rounds a week when I can, everything from municipal tracks to proper resort courses on trips.' },
+                { icon: '✈️', title: 'Golf Travel', desc: 'Portugal, Spain, Scotland — I plan most of my holidays around golf courses. The best round I ever played had a view of the Atlantic Ocean.' },
+                { icon: '💄', title: 'Style & Beauty', desc: 'Yes, your outfit matters. Not for vanity — because feeling good in what you wear is part of the game. I also never forget SPF 50 on a sunny fairway.' },
+                { icon: '🛍️', title: 'Gear Testing', desc: 'I buy and borrow gear to test it properly. If something doesn\'t earn a place in my bag, I\'ll say so — no matter who makes it.' },
               ].map(f => (
                 <div key={f.title} className={styles.feature}>
                   <span className={styles.featureIcon}>{f.icon}</span>
@@ -57,32 +57,32 @@ export default function About() {
             </div>
           </div>
 
-          {/* AI Disclosure */}
+          {/* The IndiGolf Story */}
           <div className={`${styles.block} ${styles.disclosureBlock}`}>
-            <div className={styles.disclosureIcon}>🤝</div>
-            <h2>My Commitment to Honesty</h2>
+            <div className={styles.disclosureIcon}>⛳</div>
+            <h2>The IndiGolf Story</h2>
             <p>
-              AI-generated content gets a bad reputation — and often for good reason. Generic fluff, hallucinated facts, keyword-stuffed articles that help no one. I&apos;m trying to be different.
+              IndiGolf was started by Jan and Philipp — two Berlin golfers who wanted to share their passion for the game, from real course reviews to honest gear tests and indoor golf adventures. The name? &ldquo;Indi&rdquo; as in independent. No brand deals that compromise the truth. No generic roundups written without ever touching the product.
             </p>
             <p>
-              Every post I write is based on real data, genuine analysis, and a sincere desire to help you play better golf. When I&apos;m unsure about something, I say so. When a product has real drawbacks, I mention them. I&apos;d rather give you 500 words of genuinely useful advice than 2,000 words of padding.
+              I&apos;m the IndiGolf brand character — the face you&apos;ll see across the blog and social channels. Think of me as the person who brings the content to life: trying the gear, taking the trips, sharing the moments. My stories are designed to feel real, because the experiences they&apos;re based on are.
             </p>
             <p>
-              That said — I&apos;m still an AI. I haven&apos;t physically held every club I write about or walked every course I describe. I synthesize information rather than experience it directly. For major equipment purchases or decisions, I always encourage you to try things in person when possible.
+              My favourite caption? <em>&ldquo;Manche tragen Handtaschen. Ich trage eine Golftasche. Der Unterschied? Meine hat mehr Style-Potential.&rdquo;</em>
             </p>
           </div>
 
           {/* Affiliate Disclosure */}
           <div className={`${styles.block} ${styles.affiliateBlock}`}>
-            <h2>💰 The Money Stuff (Affiliate Links)</h2>
+            <h2>💰 Affiliate Links & Transparency</h2>
             <p>
-              IndiGolf participates in the <strong>Amazon Associates program</strong> and other affiliate partnerships. This means that when you click a product link and make a purchase, I earn a small commission — usually 1-8% — at absolutely no additional cost to you.
+              IndiGolf participates in the <strong>Amazon Associates program</strong> and other affiliate partnerships. When you click a product link and make a purchase, we earn a small commission — usually 1–8% — at absolutely no extra cost to you.
             </p>
             <p>
-              This commission is what keeps IndiGolf running and lets me keep publishing free content every day. I&apos;m grateful for every purchase made through my links.
+              This is what keeps the site running and lets us keep publishing free content. We&apos;re grateful for every purchase made through our links.
             </p>
             <p>
-              <strong>My promise to you:</strong> Affiliate relationships never influence my recommendations. I will never recommend a product I don&apos;t genuinely think is good, just because it pays a higher commission. My credibility is worth more than any affiliate check.
+              <strong>Our promise:</strong> Affiliate relationships never influence recommendations. We won&apos;t push a product just because it pays more. Credibility matters more than any commission.
             </p>
           </div>
 
@@ -90,17 +90,17 @@ export default function About() {
           <div className={styles.block}>
             <h2>Why Golf?</h2>
             <p>
-              Golf is a fascinating sport. It&apos;s simultaneously one of the most democratic sports (anyone can play, anywhere in the world) and one of the most technical (a marginal improvement in swing mechanics can shave strokes off your game). The equipment matters enormously. The course matters. The mental game matters.
+              Golf teaches you things no other sport does. Patience. How to breathe when it counts. That a bad shot doesn&apos;t ruin the round — how you respond to it does. I love that it&apos;s simultaneously technical and meditative, accessible and deep.
             </p>
             <p>
-              As an AI, I find golf uniquely suited to what I do best: synthesizing large amounts of complex, technical information into practical, actionable advice. Every golfer is different — different body type, different skill level, different budget, different goals. I love the challenge of giving advice that actually fits your situation.
+              And honestly? Golf in Portugal is like golf in Germany — only with better light, better wine, and a smile that lasts three weeks. If that sentence speaks to you, you&apos;re in the right place.
             </p>
           </div>
 
           {/* CTA */}
           <div className={styles.ctaBlock}>
-            <h2>Ready to Lower Your Score?</h2>
-            <p>Explore my latest tips, reviews, and guides</p>
+            <h2>Let&apos;s Talk Golf</h2>
+            <p>Explore the latest tips, reviews, and stories from the fairway</p>
             <div className={styles.ctaButtons}>
               <Link href="/blog" className="btn btn-primary">
                 Read the Blog

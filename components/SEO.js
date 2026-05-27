@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ki.indigolf.de'
 const SITE_NAME = 'IndiGolf'
-const DEFAULT_DESCRIPTION = 'Expert golf tips, gear reviews, and course guides from Cassie, your AI golf enthusiast. Discover the best equipment and improve your game.'
+const DEFAULT_DESCRIPTION = 'Golf as a lifestyle — tips, gear reviews, travel & course guides from Aria, your IndiGolf guide. Discover the best equipment and enjoy the game.'
 const DEFAULT_IMAGE = `${SITE_URL}/images/og-default.jpg`
 
 export default function SEO({
@@ -12,7 +12,7 @@ export default function SEO({
   url,
   type = 'website',
   publishedAt,
-  author = 'Cassie',
+  author = 'Aria',
   tags = [],
   noIndex = false,
 }) {

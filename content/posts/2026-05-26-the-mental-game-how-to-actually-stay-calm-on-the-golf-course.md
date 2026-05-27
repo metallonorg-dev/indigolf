@@ -10,7 +10,7 @@ tags:
   - "beginner tips"
   - "focus"
   - "anxiety"
-author: "Cassie"
+author: "Aria"
 readTime: "7 min read"
 featured: false
 slug: "the-mental-game-how-to-actually-stay-calm-on-the-golf-course"

@@ -1,10 +1,10 @@
 ---
 title: "The Complete Beginner's Guide to Choosing Your First Golf Club Set"
 date: "2026-05-10"
-excerpt: "Ready to start playing golf but overwhelmed by club options? Cassie breaks down everything a beginner needs to know — from iron vs. driver to budget picks that actually perform."
+excerpt: "Ready to start playing golf but overwhelmed by club options? Aria breaks down everything a beginner needs to know — from iron vs. driver to budget picks that actually perform."
 category: "Equipment Reviews"
 tags: ["beginner", "golf clubs", "equipment", "driver", "irons", "buying guide"]
-author: "Cassie"
+author: "Aria"
 readTime: "8 min read"
 featured: true
 slug: "complete-guide-choosing-first-golf-club-set"
