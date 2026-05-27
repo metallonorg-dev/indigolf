@@ -77,6 +77,15 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Legal */}
+        <div className={styles.legal}>
+          <a href="https://indigolf.de/impressum/" target="_blank" rel="noopener noreferrer">Impressum</a>
+          <span className={styles.legalDivider}>·</span>
+          <a href="/datenschutz/">Datenschutz</a>
+          <span className={styles.legalDivider}>·</span>
+          <a href="https://indigolf.de" target="_blank" rel="noopener noreferrer">indigolf.de</a>
+        </div>
+
         {/* Bottom */}
         <div className={styles.bottom}>
           <p>© {year} IndiGolf. Alle Rechte vorbehalten.</p>
