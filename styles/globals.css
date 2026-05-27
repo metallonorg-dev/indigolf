@@ -5,6 +5,9 @@
   --color-accent-light: #95d5b2;
   --color-gold: #d4a017;
   --color-gold-light: #f0c040;
+  --color-neon-pink: #ff2d78;
+  --color-neon-pink-glow: rgba(255, 45, 120, 0.35);
+  --color-dark: #0a0a0a;
   --color-bg: #f8f9f4;
   --color-bg-card: #ffffff;
   --color-text: #1a1a2e;
@@ -168,27 +171,30 @@ hr {
 }
 
 .btn-primary {
-  background: var(--color-gold);
-  color: var(--color-primary);
+  background: #ffffff;
+  color: #0a0a0a;
+  border: 2px solid transparent;
 }
 
 .btn-primary:hover {
-  background: var(--color-gold-light);
-  color: var(--color-primary);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  background: #ffffff;
+  color: #0a0a0a;
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px var(--color-neon-pink-glow), 0 4px 12px rgba(0,0,0,0.15);
+  border-color: var(--color-neon-pink);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-accent-light);
-  border: 2px solid var(--color-accent-light);
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.6);
 }
 
 .btn-secondary:hover {
-  background: var(--color-accent-light);
-  color: var(--color-primary);
-  transform: translateY(-1px);
+  background: #ffffff;
+  color: #0a0a0a;
+  border-color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .btn-outline {

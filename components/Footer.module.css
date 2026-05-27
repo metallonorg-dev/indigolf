@@ -1,11 +1,13 @@
 .footer {
-  background: var(--color-primary);
+  background: var(--color-dark);
   color: rgba(255, 255, 255, 0.8);
   margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .inner {
-  padding-top: 3rem;
+  padding-top: 2.5rem;
   padding-bottom: 1.5rem;
 }
 
@@ -53,7 +55,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--color-gold);
+  color: var(--color-neon-pink);
   margin-bottom: 1rem;
 }
 
