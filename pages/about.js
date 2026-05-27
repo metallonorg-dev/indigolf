@@ -6,8 +6,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="Meet Aria — IndiGolf Lifestyle Guide"
-        description="Meet Aria, the face of IndiGolf. UX designer, Handicap 18, Berlin-based golf enthusiast and traveller. She tests gear on the course, not in a lab."
+        title="Aria kennenlernen – deine IndiGolf-Begleiterin"
+        description="Lern Aria kennen – UX Designerin, Handicap 18, Berlin. Sie testet Ausrüstung auf dem Platz, reist für Golf und lebt das Spiel als Lifestyle."
         url="/about"
       />
 
@@ -15,11 +15,12 @@ export default function About() {
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.avatarWrap}>
+            {/* Aria image slot — replace emoji with <img> when ready */}
             <div className={styles.avatar}>🏌️‍♀️</div>
             <div className={styles.avatarRing} aria-hidden="true" />
           </div>
-          <h1 className={styles.heroTitle}>Hi, I&apos;m Aria</h1>
-          <p className={styles.heroSub}>Golf Lifestyle Guide & IndiGolf&apos;s Brand Character</p>
+          <h1 className={styles.heroTitle}>Hi, ich bin Aria</h1>
+          <p className={styles.heroSub}>Golf-Lifestyle-Guide & das Gesicht von IndiGolf</p>
         </div>
       </section>
 
@@ -29,24 +30,24 @@ export default function About() {
 
           {/* Who I am */}
           <div className={styles.block}>
-            <h2>Who Am I?</h2>
+            <h2>Wer bin ich?</h2>
             <p>
-              UX designer by day, golf addict by weekend. I&apos;m Aria — Handicap 18, based in Berlin, always planning the next golf trip. I discovered golf a few years ago and quickly realised it was more than a sport: it&apos;s a mindset, a lifestyle, and honestly the best excuse to travel somewhere beautiful and spend four hours outdoors.
+              UX Designerin unter der Woche, Golf-Süchtige am Wochenende. Ich bin Aria – Handicap 18, wohnhaft in Berlin, immer auf der Suche nach dem nächsten Golftrip. Golf hat mich vor ein paar Jahren erwischt, und seitdem ist es mehr als ein Hobby: Es ist ein Lebensgefühl, eine Entschuldigung, schöne Orte zu besuchen, und der beste Grund, vier Stunden lang draußen zu sein.
             </p>
             <p>
-              I test gear on the course, not in a lab. When I pick up a rangefinder, I&apos;m not measuring sensor accuracy to three decimal places — I&apos;m asking: does it fit in my bag, does it work when I need it most, and does it still look good when I pull it out on the 5th tee? That&apos;s the kind of honest take you&apos;ll find here.
+              Ich teste Ausrüstung auf dem Platz, nicht im Labor. Wenn ich einen Entfernungsmesser in die Hand nehme, frage ich nicht nach Sensor-Genauigkeit auf drei Nachkommastellen – ich frage: Passt er in meine Tasche? Funktioniert er, wenn ich ihn brauche? Und sieht er noch gut aus, wenn ich ihn auf dem 5. Abschlag heraushole? Genau das findet ihr hier.
             </p>
           </div>
 
           {/* My Golf Life */}
           <div className={styles.block}>
-            <h2>My Golf Life in Four Things</h2>
+            <h2>Mein Golfleben in vier Punkten</h2>
             <div className={styles.featureGrid}>
               {[
-                { icon: '🎯', title: 'On the Course', desc: 'Handicap 18 and improving. I play 2–3 rounds a week when I can, everything from municipal tracks to proper resort courses on trips.' },
-                { icon: '✈️', title: 'Golf Travel', desc: 'Portugal, Spain, Scotland — I plan most of my holidays around golf courses. The best round I ever played had a view of the Atlantic Ocean.' },
-                { icon: '💄', title: 'Style & Beauty', desc: 'Yes, your outfit matters. Not for vanity — because feeling good in what you wear is part of the game. I also never forget SPF 50 on a sunny fairway.' },
-                { icon: '🛍️', title: 'Gear Testing', desc: 'I buy and borrow gear to test it properly. If something doesn\'t earn a place in my bag, I\'ll say so — no matter who makes it.' },
+                { icon: '🎯', title: 'Auf dem Platz', desc: 'Handicap 18, im Aufwärtstrend. Ich spiele 2–3 Runden pro Woche wenn möglich – von städtischen Plätzen bis zu Resorts auf Reisen.' },
+                { icon: '✈️', title: 'Golf-Reisen', desc: 'Portugal, Spanien, Schottland – meine besten Urlaube plane ich um Golfplätze. Die schönste Runde meines Lebens hatte den Atlantik im Hintergrund.' },
+                { icon: '💄', title: 'Style & Beauty', desc: 'Ja, das Outfit zählt. Nicht aus Eitelkeit – weil man besser spielt, wenn man sich gut fühlt. Und LSF 50 auf dem Fairway ist ein Muss.' },
+                { icon: '🛍️', title: 'Ausrüstungs-Tests', desc: 'Ich kaufe und leihe mir Ausrüstung, um sie wirklich zu testen. Wenn etwas keinen Platz in meiner Tasche verdient, sage ich das – egal von wem es kommt.' },
               ].map(f => (
                 <div key={f.title} className={styles.feature}>
                   <span className={styles.featureIcon}>{f.icon}</span>
@@ -60,58 +61,58 @@ export default function About() {
           {/* The IndiGolf Story */}
           <div className={`${styles.block} ${styles.disclosureBlock}`}>
             <div className={styles.disclosureIcon}>⛳</div>
-            <h2>The IndiGolf Story</h2>
+            <h2>Die IndiGolf-Geschichte</h2>
             <p>
-              IndiGolf was started by Jan and Philipp — two Berlin golfers who wanted to share their passion for the game, from real course reviews to honest gear tests and indoor golf adventures. The name? &ldquo;Indi&rdquo; as in independent. No brand deals that compromise the truth. No generic roundups written without ever touching the product.
+              IndiGolf wurde von Jan und Philipp gegründet – zwei Berliner Golfer, die ihre Leidenschaft für das Spiel teilen wollten: echte Platz-Reviews, ehrliche Ausrüstungs-Tests und Indoor-Golf-Abenteuer. Der Name? &ldquo;Indi&rdquo; wie unabhängig. Keine Brand-Deals, die die Wahrheit verbiegen. Keine generischen Listen, geschrieben ohne das Produkt je berührt zu haben.
             </p>
             <p>
-              I&apos;m the IndiGolf brand character — the face you&apos;ll see across the blog and social channels. Think of me as the person who brings the content to life: trying the gear, taking the trips, sharing the moments. My stories are designed to feel real, because the experiences they&apos;re based on are.
+              Ich bin das Gesicht von IndiGolf – die Figur, die den Content zum Leben erweckt: Ausrüstung testen, Trips machen, Momente teilen. Meine Geschichten sollen sich echt anfühlen, weil die Erlebnisse dahinter es sind.
             </p>
             <p>
-              My favourite caption? <em>&ldquo;Manche tragen Handtaschen. Ich trage eine Golftasche. Der Unterschied? Meine hat mehr Style-Potential.&rdquo;</em>
+              Mein Lieblings-Zitat? <em>&ldquo;Manche tragen Handtaschen. Ich trage eine Golftasche. Der Unterschied? Meine hat mehr Style-Potential.&rdquo;</em>
             </p>
           </div>
 
           {/* Affiliate Disclosure */}
           <div className={`${styles.block} ${styles.affiliateBlock}`}>
-            <h2>💰 Affiliate Links & Transparency</h2>
+            <h2>💰 Affiliate-Links & Transparenz</h2>
             <p>
-              IndiGolf participates in the <strong>Amazon Associates program</strong> and other affiliate partnerships. When you click a product link and make a purchase, we earn a small commission — usually 1–8% — at absolutely no extra cost to you.
+              IndiGolf nimmt am <strong>Amazon-Partnerprogramm</strong> und anderen Affiliate-Programmen teil. Wenn du auf einen Produktlink klickst und kaufst, verdienen wir eine kleine Provision – meist 1–8% – ohne Mehrkosten für dich.
             </p>
             <p>
-              This is what keeps the site running and lets us keep publishing free content. We&apos;re grateful for every purchase made through our links.
+              Diese Einnahmen halten die Seite am Laufen und ermöglichen es uns, täglich kostenlose Inhalte zu veröffentlichen.
             </p>
             <p>
-              <strong>Our promise:</strong> Affiliate relationships never influence recommendations. We won&apos;t push a product just because it pays more. Credibility matters more than any commission.
+              <strong>Unser Versprechen:</strong> Affiliate-Beziehungen beeinflussen unsere Empfehlungen nie. Wir empfehlen kein Produkt nur wegen einer höheren Provision. Glaubwürdigkeit ist uns mehr wert als jede Provision.
             </p>
           </div>
 
           {/* Why Golf */}
           <div className={styles.block}>
-            <h2>Why Golf?</h2>
+            <h2>Warum Golf?</h2>
             <p>
-              Golf teaches you things no other sport does. Patience. How to breathe when it counts. That a bad shot doesn&apos;t ruin the round — how you respond to it does. I love that it&apos;s simultaneously technical and meditative, accessible and deep.
+              Golf lehrt Dinge, die kein anderer Sport lehrt. Geduld. Wie man atmet, wenn es darauf ankommt. Dass ein schlechter Schlag eine Runde nicht ruiniert – sondern wie man darauf reagiert. Ich liebe, dass das Spiel gleichzeitig technisch und meditativ ist, zugänglich und tief.
             </p>
             <p>
-              And honestly? Golf in Portugal is like golf in Germany — only with better light, better wine, and a smile that lasts three weeks. If that sentence speaks to you, you&apos;re in the right place.
+              Und mal ehrlich: Golf in Portugal ist wie Golf in Deutschland – nur mit besserem Licht, besserem Wein und einem Grinsen, das drei Wochen anhält. Wenn euch dieser Satz anspricht, seid ihr hier genau richtig.
             </p>
           </div>
 
           {/* CTA */}
           <div className={styles.ctaBlock}>
-            <h2>Let&apos;s Talk Golf</h2>
-            <p>Explore the latest tips, reviews, and stories from the fairway</p>
+            <h2>Lass uns über Golf reden</h2>
+            <p>Entdecke die neuesten Tipps, Tests und Geschichten vom Fairway</p>
             <div className={styles.ctaButtons}>
               <Link href="/blog" className="btn btn-primary">
-                Read the Blog
+                Zum Blog
               </Link>
               <a
-                href="https://www.amazon.com/s?k=golf+equipment&tag=indigolf-20"
+                href="https://www.amazon.de/s?k=golf+ausruestung&tag=indigolf-20"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="btn btn-outline"
               >
-                Shop Gear
+                Ausrüstung shoppen
               </a>
             </div>
           </div>

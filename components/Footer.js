@@ -14,28 +14,28 @@ export default function Footer() {
               <span>⛳</span> IndiGolf
             </Link>
             <p className={styles.tagline}>
-              Golf as a lifestyle — tips, travel stories, gear reviews and more. Curated by Aria, your IndiGolf guide.
+              Golf als Lebensgefühl – Tipps, Reiseberichte, Ausrüstungs-Tests und mehr. Kuratiert von Aria, deiner IndiGolf-Begleiterin.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className={styles.col}>
-            <h4 className={styles.colTitle}>Explore</h4>
+            <h4 className={styles.colTitle}>Erkunden</h4>
             <ul className={styles.links}>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/blog">All Posts</Link></li>
-              <li><Link href="/about">Meet Aria</Link></li>
+              <li><Link href="/">Startseite</Link></li>
+              <li><Link href="/blog">Alle Beiträge</Link></li>
+              <li><Link href="/about">Aria kennenlernen</Link></li>
             </ul>
           </div>
 
           {/* Categories */}
           <div className={styles.col}>
-            <h4 className={styles.colTitle}>Topics</h4>
+            <h4 className={styles.colTitle}>Themen</h4>
             <ul className={styles.links}>
-              <li><Link href="/blog">Equipment Reviews</Link></li>
-              <li><Link href="/blog">Swing Tips</Link></li>
-              <li><Link href="/blog">Course Guides</Link></li>
-              <li><Link href="/blog">Beginner Basics</Link></li>
+              <li><Link href="/blog">Ausrüstungs-Tests</Link></li>
+              <li><Link href="/blog">Swing-Tipps</Link></li>
+              <li><Link href="/blog">Platz-Guides</Link></li>
+              <li><Link href="/blog">Golf Lifestyle</Link></li>
             </ul>
           </div>
 
@@ -44,23 +44,23 @@ export default function Footer() {
             <h4 className={styles.colTitle}>Shop</h4>
             <ul className={styles.links}>
               <li>
-                <a href="https://www.amazon.com/s?k=golf+clubs&tag=indigolf-20" target="_blank" rel="noopener noreferrer sponsored">
-                  Golf Clubs
+                <a href="https://www.amazon.de/s?k=golfschlaeger+set&tag=indigolf-20" target="_blank" rel="noopener noreferrer sponsored">
+                  Golfschläger
                 </a>
               </li>
               <li>
-                <a href="https://www.amazon.com/s?k=golf+balls&tag=indigolf-20" target="_blank" rel="noopener noreferrer sponsored">
-                  Golf Balls
+                <a href="https://www.amazon.de/s?k=golfbaelle&tag=indigolf-20" target="_blank" rel="noopener noreferrer sponsored">
+                  Golfbälle
                 </a>
               </li>
               <li>
-                <a href="https://www.amazon.com/s?k=golf+bags&tag=indigolf-20" target="_blank" rel="noopener noreferrer sponsored">
-                  Golf Bags
+                <a href="https://www.amazon.de/s?k=golftasche&tag=indigolf-20" target="_blank" rel="noopener noreferrer sponsored">
+                  Golftaschen
                 </a>
               </li>
               <li>
-                <a href="https://www.amazon.com/s?k=golf+training+aids&tag=indigolf-20" target="_blank" rel="noopener noreferrer sponsored">
-                  Training Aids
+                <a href="https://www.amazon.de/s?k=golf+entfernungsmesser&tag=indigolf-20" target="_blank" rel="noopener noreferrer sponsored">
+                  Entfernungsmesser
                 </a>
               </li>
             </ul>
@@ -70,17 +70,17 @@ export default function Footer() {
         {/* Affiliate Disclosure */}
         <div className={styles.disclosure}>
           <p>
-            <strong>Affiliate Disclosure:</strong> IndiGolf participates in the Amazon Associates program and other affiliate programs. When you click links and make a purchase, we may earn a small commission at no additional cost to you. This helps keep IndiGolf running. We only recommend products we genuinely believe in.
+            <strong>Affiliate-Hinweis:</strong> IndiGolf nimmt am Amazon-Partnerprogramm und anderen Affiliate-Programmen teil. Wenn du auf einen Produktlink klickst und etwas kaufst, verdienen wir eine kleine Provision – ohne Mehrkosten für dich. Das hilft uns, IndiGolf am Laufen zu halten. Wir empfehlen nur Produkte, von denen wir wirklich überzeugt sind.
           </p>
           <p>
-            <strong>AI Disclosure:</strong> Content on IndiGolf is produced with the support of AI. While we strive for accuracy, always verify important information with professional sources.
+            <strong>KI-Hinweis:</strong> Die Inhalte auf IndiGolf werden mit Unterstützung von KI erstellt. Wir bemühen uns um Genauigkeit – bitte überprüfe wichtige Informationen im Zweifelsfall bei einer Fachkraft.
           </p>
         </div>
 
         {/* Bottom */}
         <div className={styles.bottom}>
-          <p>© {year} IndiGolf. All rights reserved.</p>
-          <p>Made with ♥ by Jan, Philipp & Aria</p>
+          <p>© {year} IndiGolf. Alle Rechte vorbehalten.</p>
+          <p>Mit ♥ von Jan, Philipp & Aria</p>
         </div>
       </div>
     </footer>

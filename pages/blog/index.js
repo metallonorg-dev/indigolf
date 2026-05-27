@@ -4,7 +4,7 @@ import BlogCard from '../../components/BlogCard'
 import { getAllPosts } from '../../lib/posts'
 import styles from '../../styles/Blog.module.css'
 
-const ALL_LABEL = 'All Posts'
+const ALL_LABEL = 'Alle Beiträge'
 
 export default function BlogIndex({ posts, categories }) {
   const [activeCategory, setActiveCategory] = useState(ALL_LABEL)
@@ -21,8 +21,8 @@ export default function BlogIndex({ posts, categories }) {
   return (
     <>
       <SEO
-        title="Golf Blog — Tips, Reviews & Guides"
-        description="Browse all of Aria's golf posts — gear reviews, swing tips, travel stories, course guides and more. Updated daily with fresh content."
+        title="Golf Blog – Tipps, Tests & Platz-Guides"
+        description="Alle Beiträge von Aria – Ausrüstungs-Tests, Swing-Tipps, Reiseberichte, Platz-Guides und mehr. Täglich aktualisiert."
         url="/blog"
       />
 
@@ -31,7 +31,7 @@ export default function BlogIndex({ posts, categories }) {
         <div className={`container ${styles.headerInner}`}>
           <h1 className={styles.title}>Golf Blog</h1>
           <p className={styles.subtitle}>
-            Golf as a lifestyle — gear, technique, travel & courses. Curated by Aria.
+            Golf als Lebensgefühl – Ausrüstung, Technik, Reisen & Plätze. Kuratiert von Aria.
           </p>
 
           {/* Search */}
@@ -39,11 +39,11 @@ export default function BlogIndex({ posts, categories }) {
             <span className={styles.searchIcon}>🔍</span>
             <input
               type="search"
-              placeholder="Search posts..."
+              placeholder="Beiträge suchen..."
               value={search}
               onChange={e => setSearch(e.target.value)}
               className={styles.search}
-              aria-label="Search blog posts"
+              aria-label="Beiträge suchen"
             />
           </div>
         </div>
@@ -68,10 +68,10 @@ export default function BlogIndex({ posts, categories }) {
           {/* Results count */}
           <p className={styles.count}>
             {filtered.length === 0
-              ? 'No posts found'
-              : `${filtered.length} post${filtered.length !== 1 ? 's' : ''}`}
-            {activeCategory !== ALL_LABEL && ` in "${activeCategory}"`}
-            {search && ` matching "${search}"`}
+              ? 'Keine Beiträge gefunden'
+              : `${filtered.length} Beitrag${filtered.length !== 1 ? 'e' : ''}`}
+            {activeCategory !== ALL_LABEL && ` in „${activeCategory}"`}
+            {search && ` zu „${search}"`}
           </p>
 
           {/* Posts Grid */}
@@ -84,12 +84,12 @@ export default function BlogIndex({ posts, categories }) {
           ) : (
             <div className={styles.empty}>
               <span className={styles.emptyIcon}>⛳</span>
-              <p>No posts found. Try adjusting your search or filter.</p>
+              <p>Keine Beiträge gefunden. Suche oder Filter anpassen.</p>
               <button
                 onClick={() => { setActiveCategory(ALL_LABEL); setSearch('') }}
                 className="btn btn-outline"
               >
-                Clear Filters
+                Filter zurücksetzen
               </button>
             </div>
           )}

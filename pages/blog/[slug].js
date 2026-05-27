@@ -52,7 +52,7 @@ export default function PostPage({ post, relatedPosts }) {
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
           <Link href="/blog" className={styles.backLink}>
-            ← Back to Blog
+            ← Zurück zum Blog
           </Link>
           {post.category && (
             <span className={styles.category}>{post.category}</span>
@@ -89,7 +89,7 @@ export default function PostPage({ post, relatedPosts }) {
           {/* Tags */}
           {post.tags?.length > 0 && (
             <div className={styles.tags}>
-              <strong>Tags:</strong>
+              <strong>Themen:</strong>
               {post.tags.map(tag => (
                 <span key={tag} className={styles.tag}>{tag}</span>
               ))}
@@ -100,8 +100,8 @@ export default function PostPage({ post, relatedPosts }) {
           <div className={styles.disclosure}>
             <span className={styles.disclosureIcon}>🏌️‍♀️</span>
             <div>
-              <strong>Written by Aria</strong>
-              <p>Aria is IndiGolf&apos;s golf lifestyle guide — UX designer, Handicap 18, Berlin-based, always on the lookout for the next great course. This post may contain affiliate links — a small commission is earned if you purchase through them, at no extra cost to you.</p>
+              <strong>Verfasst von Aria</strong>
+              <p>Aria ist IndiGolfs Golf-Lifestyle-Guide – UX Designerin, Handicap 18, Berlin. Immer auf der Suche nach dem nächsten großartigen Platz. Dieser Beitrag kann Affiliate-Links enthalten – wir verdienen eine kleine Provision, wenn du darüber kaufst, ohne Mehrkosten für dich.</p>
             </div>
           </div>
         </article>
@@ -110,22 +110,22 @@ export default function PostPage({ post, relatedPosts }) {
         <aside className={styles.sidebar}>
           {/* Shop CTA */}
           <div className={styles.widget}>
-            <h3 className={styles.widgetTitle}>🛒 Shop on Amazon</h3>
-            <p className={styles.widgetText}>Find the best golf gear, curated by Aria</p>
+            <h3 className={styles.widgetTitle}>🛒 Bei Amazon shoppen</h3>
+            <p className={styles.widgetText}>Die besten Golf-Produkte, von Aria kuratiert</p>
             <a
-              href={`https://www.amazon.com/s?k=${encodeURIComponent(post.category || 'golf equipment')}&tag=indigolf-20`}
+              href={`https://www.amazon.de/s?k=${encodeURIComponent(post.category || 'golf ausruestung')}&tag=indigolf-20`}
               target="_blank"
               rel="noopener noreferrer sponsored"
               className={`btn btn-primary ${styles.widgetBtn}`}
             >
-              Browse {post.category || 'Golf'} Gear →
+              {post.category || 'Golf'}-Ausrüstung ansehen →
             </a>
           </div>
 
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
             <div className={styles.widget}>
-              <h3 className={styles.widgetTitle}>📖 Related Posts</h3>
+              <h3 className={styles.widgetTitle}>📖 Ähnliche Beiträge</h3>
               <ul className={styles.relatedList}>
                 {relatedPosts.map(related => (
                   <li key={related.slug} className={styles.relatedItem}>
@@ -144,9 +144,9 @@ export default function PostPage({ post, relatedPosts }) {
           {/* About Aria */}
           <div className={`${styles.widget} ${styles.cassieWidget}`}>
             <div className={styles.cassieAvatar}>🏌️‍♀️</div>
-            <h3>About Aria</h3>
-            <p>UX designer, Handicap 18, based in Berlin. Golf obsessive, frequent traveller, and your IndiGolf lifestyle guide.</p>
-            <Link href="/about" className={styles.cassieLink}>Meet Aria →</Link>
+            <h3>Über Aria</h3>
+            <p>UX Designerin, Handicap 18, Berlin. Golf-Enthusiastin, Vielflieger-Golferin und deine IndiGolf Lifestyle-Begleiterin.</p>
+            <Link href="/about" className={styles.cassieLink}>Aria kennenlernen →</Link>
           </div>
         </aside>
       </div>

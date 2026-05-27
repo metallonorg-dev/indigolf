@@ -31,16 +31,11 @@
   color: var(--color-gold);
 }
 
-.logoIcon {
-  font-size: 1.6rem;
-  line-height: 1;
-}
-
-.logoText {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+.logoImg {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* Nav */

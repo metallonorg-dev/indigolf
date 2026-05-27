@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ki.indigolf.de'
 const SITE_NAME = 'IndiGolf'
-const DEFAULT_DESCRIPTION = 'Golf as a lifestyle — tips, gear reviews, travel & course guides from Aria, your IndiGolf guide. Discover the best equipment and enjoy the game.'
+const DEFAULT_DESCRIPTION = 'Golf als Lebensgefühl – Tipps, Ausrüstungs-Tests, Reiseberichte und Platz-Guides von Aria, deiner IndiGolf-Begleiterin.'
 const DEFAULT_IMAGE = `${SITE_URL}/images/og-default.jpg`
 
 export default function SEO({
@@ -37,7 +37,8 @@ export default function SEO({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="de_DE" />
+      <meta name="language" content="de" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />

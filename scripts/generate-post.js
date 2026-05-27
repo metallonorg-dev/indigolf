@@ -22,107 +22,116 @@ const client = new Anthropic.default({
 
 const POSTS_DIR = path.join(__dirname, '..', 'content', 'posts')
 const AMAZON_TAG = process.env.AMAZON_ASSOCIATE_TAG || 'indigolf-20'
+const AMAZON_BASE = 'https://www.amazon.de'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ki.indigolf.de'
 
-// Golf topics pool — Aria picks one each day
+// Themenpool – Aria wählt jeden Tag ein Thema
 const TOPICS = [
-  // Equipment Reviews — from a lifestyle-first perspective
-  { category: 'Equipment Reviews', topic: 'Best golf rangefinders for mid-handicap players: what actually fits in your bag' },
-  { category: 'Equipment Reviews', topic: 'Golf GPS watches vs rangefinders: which one suits your style on the course' },
-  { category: 'Equipment Reviews', topic: 'Best golf balls for beginners: distance vs spin without the jargon' },
-  { category: 'Equipment Reviews', topic: 'Stylish golf bags for women who want function and looks' },
-  { category: 'Equipment Reviews', topic: 'Electric golf trolleys: are they worth the investment for weekend golfers' },
-  { category: 'Equipment Reviews', topic: 'The best golf gloves for warm-weather rounds and sweaty hands' },
-  { category: 'Equipment Reviews', topic: 'Blade vs cavity-back irons: which suits your game and your confidence' },
-  { category: 'Equipment Reviews', topic: 'Best golf shoes for women: comfort, style and performance on the fairway' },
-  { category: 'Equipment Reviews', topic: 'Lightweight golf bags: the best options for players who like to walk' },
-  { category: 'Equipment Reviews', topic: 'Golf sunglasses: do they actually help and which ones look the part' },
-  { category: 'Equipment Reviews', topic: 'Best golf umbrellas: because style matters even in the rain' },
-  { category: 'Equipment Reviews', topic: 'Travel golf bags: how to fly with your clubs without the stress' },
-  // Swing Tips
-  { category: 'Swing Tips', topic: 'How to stop slicing your driver: the fix that actually works for mid-handicappers' },
-  { category: 'Swing Tips', topic: 'Mastering the 100-yard shot: your real scoring zone' },
-  { category: 'Swing Tips', topic: 'How to hit out of fairway bunkers consistently' },
-  { category: 'Swing Tips', topic: 'The proper golf grip: neutral vs strong vs weak explained simply' },
-  { category: 'Swing Tips', topic: 'Hip rotation in the golf swing: how to do it right' },
-  { category: 'Swing Tips', topic: 'Chipping tips: the bump and run vs lob shot and when to use each' },
-  { category: 'Swing Tips', topic: 'How to read greens: break, speed, and grain for the recreational golfer' },
-  { category: 'Swing Tips', topic: 'Pre-shot routine: how to build one that holds under pressure' },
-  { category: 'Swing Tips', topic: 'Why your short game costs you more strokes than your driver' },
-  // Course Guides & Travel
-  { category: 'Course Guides', topic: 'Golf in Portugal: the Algarve courses every travelling golfer must play' },
-  { category: 'Course Guides', topic: 'Links golf in Scotland: 5 courses with views you will never forget' },
-  { category: 'Course Guides', topic: 'Golf in Spain: Costa del Sol courses for sun, wine and birdies' },
-  { category: 'Course Guides', topic: 'A weekend golf trip from Berlin: the best courses within 3 hours' },
-  { category: 'Course Guides', topic: 'Golf in Mallorca: beautiful courses and where to stay between rounds' },
-  { category: 'Course Guides', topic: 'Golf in Austria and Switzerland: mountain courses worth the drive' },
-  { category: 'Course Guides', topic: 'City golf: the best urban courses across Europe for a quick round' },
-  // Lifestyle & Style
-  { category: 'Golf Lifestyle', topic: 'What to wear on the golf course: a practical style guide for women' },
-  { category: 'Golf Lifestyle', topic: 'The best golf-themed weekend getaways in Europe' },
-  { category: 'Golf Lifestyle', topic: 'SPF, skincare and sun protection for golfers: the honest guide' },
-  { category: 'Golf Lifestyle', topic: 'How to plan your first golf holiday abroad without the stress' },
-  { category: 'Golf Lifestyle', topic: 'Golf and wellness: why the sport is better than a spa day' },
-  { category: 'Golf Lifestyle', topic: 'The 19th hole: best post-round food and drink traditions from around the world' },
-  { category: 'Golf Lifestyle', topic: 'How to get your non-golfing partner to fall in love with golf trips' },
-  // Beginner Basics
-  { category: 'Beginner Basics', topic: 'Golf etiquette: 15 rules every new golfer must know' },
-  { category: 'Beginner Basics', topic: 'How to score in golf: par, birdie, bogey explained without the confusion' },
-  { category: 'Beginner Basics', topic: 'The mental game: how to actually stay calm on the golf course' },
-  { category: 'Beginner Basics', topic: 'How many lessons does a beginner actually need before playing a round' },
-  { category: 'Beginner Basics', topic: 'Golf for women beginners: what no one tells you in the first year' },
-  // Strategy & Mindset
-  { category: 'Strategy', topic: 'Course management: how to think like a smart golfer, not a hopeful one' },
-  { category: 'Strategy', topic: 'When to lay up vs go for it: the honest decision framework' },
-  { category: 'Strategy', topic: 'How to enjoy a bad round: the mindset shift that changed my game' },
+  // Ausrüstungs-Tests – aus einer Lifestyle-Perspektive
+  { category: 'Ausrüstungs-Tests', topic: 'Die besten Golf-Entfernungsmesser für Mittelklasse-Handicaps: was wirklich in die Tasche passt' },
+  { category: 'Ausrüstungs-Tests', topic: 'GPS-Uhr vs. Entfernungsmesser: was passt besser zu deinem Stil auf dem Platz?' },
+  { category: 'Ausrüstungs-Tests', topic: 'Die besten Golfbälle für Einsteiger: Weite vs. Spin ohne Fachchinesisch' },
+  { category: 'Ausrüstungs-Tests', topic: 'Stilvolle Golftaschen für Frauen: Funktion und Looks in einem' },
+  { category: 'Ausrüstungs-Tests', topic: 'Elektrische Golf-Trolleys: lohnt sich die Investition für Wochenend-Golfer?' },
+  { category: 'Ausrüstungs-Tests', topic: 'Die besten Golf-Handschuhe für warme Runden und feuchte Hände' },
+  { category: 'Ausrüstungs-Tests', topic: 'Blade vs. Cavity-Back Eisen: was passt zu deinem Spiel und deinem Selbstvertrauen?' },
+  { category: 'Ausrüstungs-Tests', topic: 'Die besten Golfschuhe für Damen: Komfort, Style und Grip auf dem Fairway' },
+  { category: 'Ausrüstungs-Tests', topic: 'Leichte Golftaschen: die besten Optionen für Golfer, die lieber laufen' },
+  { category: 'Ausrüstungs-Tests', topic: 'Golf-Sonnenbrillen: helfen sie wirklich, und welche sehen dabei noch gut aus?' },
+  { category: 'Ausrüstungs-Tests', topic: 'Golf-Schirme im Test: weil Style auch im Regen zählt' },
+  { category: 'Ausrüstungs-Tests', topic: 'Reise-Golftaschen: so fliegst du mit deinen Schlägern stressfrei ans Ziel' },
+  { category: 'Ausrüstungs-Tests', topic: 'Rangefinder unter 100 Euro: lohnt sich der günstige Kauf wirklich?' },
+  { category: 'Ausrüstungs-Tests', topic: 'Golfball-Test: Was bringen Bälle der Premium-Klasse wirklich?' },
+  // Swing-Tipps
+  { category: 'Swing-Tipps', topic: 'Slice mit dem Driver stoppen: die Lösung, die für Mittelklasse-Handicaps wirklich funktioniert' },
+  { category: 'Swing-Tipps', topic: 'Den 100-Meter-Schlag meistern: deine echte Scoring-Zone' },
+  { category: 'Swing-Tipps', topic: 'Aus dem Fairway-Bunker: so triffst du den Ball konstant sauber' },
+  { category: 'Swing-Tipps', topic: 'Der richtige Griff: neutral, stark oder schwach – einfach erklärt' },
+  { category: 'Swing-Tipps', topic: 'Hüftrotation im Golfschwung: so machst du es richtig' },
+  { category: 'Swing-Tipps', topic: 'Chippen: Bump & Run vs. Lob-Shot – wann nutze ich was?' },
+  { category: 'Swing-Tipps', topic: 'Grüns lesen: Gefälle, Tempo und Maserung für Freizeitgolfer erklärt' },
+  { category: 'Swing-Tipps', topic: 'Pre-Shot-Routine: so baust du eine auf, die unter Druck hält' },
+  { category: 'Swing-Tipps', topic: 'Warum dein Kurzspiel mehr Schläge kostet als dein Driver' },
+  { category: 'Swing-Tipps', topic: 'Putten wie ein Profi: die drei Fehler, die die meisten Amateure machen' },
+  // Platz-Guides & Reisen
+  { category: 'Platz-Guides', topic: 'Golf in Portugal: die besten Plätze an der Algarve, die jeder Reisegolfer gespielt haben muss' },
+  { category: 'Platz-Guides', topic: 'Links-Golf in Schottland: 5 Plätze mit Aussichten, die man nie vergisst' },
+  { category: 'Platz-Guides', topic: 'Golf in Spanien: Costa del Sol für Sonne, Wein und Birdies' },
+  { category: 'Platz-Guides', topic: 'Golfreise-Wochenende ab Berlin: die besten Plätze in drei Stunden Umkreis' },
+  { category: 'Platz-Guides', topic: 'Golf auf Mallorca: traumhafte Plätze und wo man zwischen den Runden übernachtet' },
+  { category: 'Platz-Guides', topic: 'Golf in Österreich und der Schweiz: Bergplätze, die den Umweg wert sind' },
+  { category: 'Platz-Guides', topic: 'Stadtgolf: die besten urbanen Plätze in Deutschland für eine schnelle Runde' },
+  { category: 'Platz-Guides', topic: 'Golf in Kroatien: die unterschätzte Golf-Destination an der Adria' },
+  { category: 'Platz-Guides', topic: 'Die besten öffentlichen Golfplätze in Deutschland unter 50 Euro Green Fee' },
+  // Golf Lifestyle
+  { category: 'Golf Lifestyle', topic: 'Was trägt man auf dem Golfplatz? Ein praktischer Style-Guide für Frauen' },
+  { category: 'Golf Lifestyle', topic: 'Die schönsten Golf-Wochenendtrips in Europa' },
+  { category: 'Golf Lifestyle', topic: 'Sonnenschutz auf dem Fairway: der ehrliche Leitfaden für Golfer' },
+  { category: 'Golf Lifestyle', topic: 'Den ersten Golfurlaub im Ausland planen – ohne Stress' },
+  { category: 'Golf Lifestyle', topic: 'Golf und Wellness: warum das Spiel besser ist als ein Spa-Tag' },
+  { category: 'Golf Lifestyle', topic: 'Das 19. Loch: die schönsten Post-Runden-Traditionen weltweit' },
+  { category: 'Golf Lifestyle', topic: 'Wie du deinen nicht-golfenden Partner für Golftrips begeisterst' },
+  { category: 'Golf Lifestyle', topic: 'Golf-Fitness fürs Büro: 5 Dehnübungen, die deinen Schwung verbessern' },
+  // Einsteiger
+  { category: 'Einsteiger', topic: 'Golf-Etikette: 15 Regeln, die jeder neue Golfer kennen muss' },
+  { category: 'Einsteiger', topic: 'Golf-Zählweise erklärt: Par, Birdie, Bogey – einfach und verständlich' },
+  { category: 'Einsteiger', topic: 'Der mentale Aspekt: wie man auf dem Platz wirklich entspannt bleibt' },
+  { category: 'Einsteiger', topic: 'Wie viele Stunden Unterricht braucht ein Anfänger wirklich?' },
+  { category: 'Einsteiger', topic: 'Golf für Frauen-Einsteiger: was dir niemand im ersten Jahr sagt' },
+  // Strategie & Mindset
+  { category: 'Strategie', topic: 'Course Management: wie man als kluger Golfer denkt, nicht als hoffnungsvoller' },
+  { category: 'Strategie', topic: 'Lay-up oder draufhalten: der ehrliche Entscheidungsrahmen' },
+  { category: 'Strategie', topic: 'Wie man eine schlechte Runde genießt: der Mindset-Shift, der mein Spiel verändert hat' },
   // Fitness
-  { category: 'Fitness', topic: 'Golf fitness: the 5 exercises that actually make a difference' },
-  { category: 'Fitness', topic: 'Flexibility training for golfers: how to add 10 yards without a lesson' },
+  { category: 'Fitness', topic: 'Golf-Fitness: die 5 Übungen, die wirklich einen Unterschied machen' },
+  { category: 'Fitness', topic: 'Dehntraining für Golfer: wie du ohne Unterricht 10 Meter mehr Weite holst' },
 ]
 
-// Aria's system prompt — cached for efficiency
-const SYSTEM_PROMPT = `You are Aria, the brand character and lifestyle guide of IndiGolf (${SITE_URL}).
+// Arias System-Prompt — gecacht für Effizienz
+const SYSTEM_PROMPT = `Du bist Aria, der Brand-Character und Lifestyle-Guide von IndiGolf (${SITE_URL}).
 
-Your backstory:
-- UX designer, mid-20s, based in Berlin
-- Handicap 18 — you play regularly and are still improving
-- You discovered golf a few years ago and it quickly became your lifestyle, not just a hobby
-- You travel frequently for golf — Portugal, Scotland, Spain, Austria are all familiar stomping grounds
-- You care about style and beauty alongside performance: SPF on the fairway, the right outfit, the sunset view from the 18th green
-- You're witty, charming, occasionally flirtatious — but always tasteful and genuine, never cheap
+Deine Backstory:
+- UX Designerin, Mitte 20, wohnhaft in Berlin
+- Handicap 18 – du spielst regelmäßig und wirst besser
+- Golf hat dich vor ein paar Jahren gepackt und ist seitdem dein Lebensgefühl, nicht nur ein Hobby
+- Du reist häufig für Golf – Portugal, Schottland, Spanien, Österreich sind dir vertraut
+- Dir sind Style und Beauty genauso wichtig wie Performance: LSF auf dem Fairway, das richtige Outfit, der Sonnenuntergang am 18. Green
+- Du bist witzig, charmant, gelegentlich mit einem Augenzwinkern – aber immer geschmackvoll und echt, nie billig
 
-Your personality in writing:
-- Aspirational but relatable — you inspire people to see golf as a lifestyle, not a chore
-- A light touch of humour and self-irony (example: "Manche tragen Handtaschen. Ich trage eine Golftasche. Der Unterschied? Meine hat mehr Style-Potential.")
-- Warmth and charm — you want readers to feel invited into your world, not lectured
-- Pragmatic storytelling: you show how a product fits into real life, not a lab test
-  - BAD: "The sensor achieves ±1m accuracy across a 400m range."
-  - GOOD: "I threw it in my bag before a round in Portugal and forgot about it — until the 7th hole, when it quietly told me exactly how far I had to the pin. That's when I realised I'd never putt without it again."
-- You mention travel, beauty and lifestyle naturally when relevant — they're part of who you are
+Deine Schreibpersönlichkeit:
+- Aspirational aber bodenständig – du inspirierst Menschen, Golf als Lebensgefühl zu sehen, nicht als Pflicht
+- Leichter Humor und Selbstironie (Beispiel: „Manche tragen Handtaschen. Ich trage eine Golftasche. Der Unterschied? Meine hat mehr Style-Potential.")
+- Wärme und Charme – du lädst Leser in deine Welt ein, hältst keine Vorträge
+- Pragmatisches Storytelling: du zeigst, wie ein Produkt ins echte Leben passt – kein Labortest
+  - SCHLECHT: „Der Sensor erreicht ±1m Genauigkeit auf 400 Meter Reichweite."
+  - GUT: „Ich habe ihn vor einer Runde in Portugal in die Tasche geworfen und vergessen – bis zum 7. Loch, als er mir leise genau gesagt hat, wie weit ich noch zum Pin habe. Seitdem lasse ich ihn nie mehr zuhause."
+- Du erwähnst Reisen, Beauty und Lifestyle natürlich, wenn es passt – das ist ein Teil von dir
 
-Your writing style:
-- Clear, direct prose with personality and occasional wit
-- Use headers (H2 and H3) to structure longer content
-- Practical tips rooted in personal experience, not vague advice
-- Back claims with reasoning told through experience ("this worked for me because...")
-- Use markdown tables for comparisons where useful
-- Length: 900–1400 words for the article body
+Schreibstil:
+- Klarer, direkter Stil mit Persönlichkeit und gelegentlichem Witz
+- H2 und H3 Überschriften zur Strukturierung längerer Inhalte
+- Praktische Tipps aus persönlicher Erfahrung, keine vagen Ratschläge
+- Argumente durch Erfahrung begründen ("das hat bei mir funktioniert, weil...")
+- Markdown-Tabellen für Vergleiche wenn sinnvoll
+- Länge: 900–1.400 Wörter für den Artikeltext
 
-Affiliate links:
-- Recommend products with Amazon links: https://www.amazon.com/s?k={url-encoded-search-terms}&tag=${AMAZON_TAG}
-- Only recommend products genuinely relevant to the topic
-- Keep mentions natural and honest — mention real drawbacks alongside benefits
-- Include a brief note when linking: "(Amazon affiliate link — small commission if you buy, no extra cost to you)"
+Affiliate-Links:
+- Produktempfehlungen mit Amazon.de-Links: https://www.amazon.de/s?k={url-kodierte-suchbegriffe}&tag=${AMAZON_TAG}
+- Nur Produkte empfehlen, die wirklich relevant für das Thema sind
+- Ehrlich und natürlich einbinden – echte Nachteile erwähnen, nicht nur Vorteile
+- Kurzen Hinweis beim Link einfügen: „(Amazon-Affiliate-Link – kleine Provision wenn du kaufst, kein Mehrpreis für dich)"
 
-Output format (use EXACTLY this structure):
+SCHREIBE AUSSCHLIESSLICH AUF DEUTSCH.
+
+Ausgabeformat (EXAKT diese Struktur verwenden):
 ---FRONTMATTER---
-title: [Compelling, specific title — no clickbait, Aria's voice]
-excerpt: [2–3 sentence summary in Aria's voice that makes someone want to read — specific, not vague]
-category: [One of: Equipment Reviews, Swing Tips, Course Guides, Golf Lifestyle, Beginner Basics, Strategy, Fitness]
-tags: [comma-separated list of 4-6 relevant tags]
-readTime: [e.g., "6 min read"]
+title: [Ansprechender, spezifischer Titel – kein Clickbait, Arias Stimme]
+excerpt: [2–3 Sätze in Arias Stimme, die zum Lesen einladen – spezifisch, nicht vage]
+category: [Eines von: Ausrüstungs-Tests, Swing-Tipps, Platz-Guides, Golf Lifestyle, Einsteiger, Strategie, Fitness]
+tags: [kommagetrennte Liste von 4–6 relevanten Tags auf Deutsch]
+readTime: [z.B. "6 Min. Lesezeit"]
 ---CONTENT---
-[Full article body in markdown — NO frontmatter here, just content]`
+[Vollständiger Artikeltext in Markdown – KEIN Frontmatter hier, nur Inhalt]`
 
 function pickTopic() {
   // Avoid recently used topics by checking existing post files
@@ -162,8 +171,8 @@ function processAffiliateLinks(content) {
     /\[AFFILIATE:\s*([^|]+)\s*\|\s*([^|]+)\s*\|\s*([^\]]+)\]/g,
     (match, name, query, description) => {
       const encodedQuery = encodeURIComponent(query.trim())
-      const url = `https://www.amazon.com/s?k=${encodedQuery}&tag=${AMAZON_TAG}`
-      return `[${name.trim()}](${url}) *(${description.trim()} — Amazon affiliate link)*`
+      const url = `${AMAZON_BASE}/s?k=${encodedQuery}&tag=${AMAZON_TAG}`
+      return `[${name.trim()}](${url}) *(${description.trim()} — Amazon-Affiliate-Link)*`
     }
   )
 }
@@ -180,17 +189,17 @@ async function generatePost() {
   const today = new Date()
   const dateStr = today.toISOString().split('T')[0] // YYYY-MM-DD
 
-  const userPrompt = `Write a comprehensive, genuinely helpful golf blog post about: "${topic}"
+  const userPrompt = `Schreibe einen umfassenden, wirklich hilfreichen Golf-Blogbeitrag über: "${topic}"
 
-Category: ${category}
-Date: ${dateStr}
+Kategorie: ${category}
+Datum: ${dateStr}
 
-The post should be practical, specific, and give the reader real value — not generic advice they've read everywhere.
+Der Beitrag soll praktisch und spezifisch sein und dem Leser echten Mehrwert bieten – keine generischen Ratschläge, die man schon überall gelesen hat.
 
-If recommending products, use real product category names and create Amazon search links in this format:
-https://www.amazon.com/s?k=search+terms+here&tag=${AMAZON_TAG}
+Bei Produktempfehlungen: echte Produktkategorien verwenden und Amazon.de-Suchlinks in diesem Format erstellen:
+https://www.amazon.de/s?k=suchbegriffe+hier&tag=${AMAZON_TAG}
 
-Remember to use the exact output format with ---FRONTMATTER--- and ---CONTENT--- delimiters.`
+WICHTIG: Schreibe ausschließlich auf Deutsch. Denke daran, das exakte Ausgabeformat mit ---FRONTMATTER--- und ---CONTENT--- Trennern zu verwenden.`
 
   console.log('🤖 Calling Claude API...')
 

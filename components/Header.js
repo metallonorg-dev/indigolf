@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from './Header.module.css'
 
 const navLinks = [
-  { href: '/', label: 'Home' },
+  { href: '/', label: 'Startseite' },
   { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'Meet Aria' },
+  { href: '/about', label: 'Aria kennenlernen' },
 ]
 
 export default function Header() {
@@ -28,11 +29,17 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>⛳</span>
-          <span className={styles.logoText}>IndiGolf</span>
+          <Image
+            src="/indigolf-logo.png"
+            alt="IndiGolf"
+            width={177}
+            height={66}
+            className={styles.logoImg}
+            priority
+          />
         </Link>
 
-        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`} aria-label="Main navigation">
+        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`} aria-label="Hauptnavigation">
           {navLinks.map(link => (
             <Link
               key={link.href}
@@ -43,19 +50,19 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="https://www.amazon.com/s?k=golf+equipment&tag=indigolf-20"
+            href="https://www.amazon.de/s?k=golf+ausruestung&tag=indigolf-20"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className={styles.shopBtn}
           >
-            Shop Gear
+            Shop
           </a>
         </nav>
 
         <button
           className={styles.hamburger}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
           aria-expanded={menuOpen}
         >
           <span className={`${styles.bar} ${menuOpen ? styles.barOpen : ''}`} />

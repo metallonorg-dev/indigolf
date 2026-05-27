@@ -5,18 +5,18 @@ import { getAllPosts } from '../lib/posts'
 import styles from '../styles/Home.module.css'
 
 const CATEGORIES = [
-  { name: 'Equipment Reviews', icon: '🏌️', desc: 'Clubs, balls, bags & more' },
-  { name: 'Swing Tips', icon: '⛳', desc: 'Improve your technique' },
-  { name: 'Course Guides', icon: '🗺️', desc: 'Best courses reviewed' },
-  { name: 'Beginner Basics', icon: '📚', desc: 'Start your golf journey' },
+  { name: 'Ausrüstung', icon: '🏌️', desc: 'Schläger, Bälle, Taschen & mehr' },
+  { name: 'Swing-Tipps', icon: '⛳', desc: 'Technik verbessern' },
+  { name: 'Platz-Guides', icon: '🗺️', desc: 'Die besten Plätze' },
+  { name: 'Golf Lifestyle', icon: '✈️', desc: 'Reisen, Style & mehr' },
 ]
 
 export default function Home({ recentPosts }) {
   return (
     <>
       <SEO
-        title="Golf Tips, Gear Reviews & Course Guides"
-        description="Golf as a lifestyle — expert gear reviews, swing tips, travel stories and course guides from Aria, your IndiGolf guide."
+        title="Golf-Tipps, Ausrüstungs-Tests & Platz-Guides"
+        description="Golf als Lebensgefühl – Ausrüstungs-Tests, Swing-Tipps, Reiseberichte und Platz-Guides von Aria, deiner IndiGolf-Begleiterin."
       />
 
       {/* Hero */}
@@ -24,33 +24,33 @@ export default function Home({ recentPosts }) {
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroBadge}>⛳ Golf & Lifestyle</div>
           <h1 className={styles.heroTitle}>
-            Golf is More Than a Sport. It&apos;s a Lifestyle.
+            Golf ist mehr als ein Sport. Es ist ein Lebensgefühl.
           </h1>
           <p className={styles.heroSubtitle}>
-            Gear reviews, swing tips, travel stories and course guides — curated by Aria, your IndiGolf companion.
+            Ausrüstungs-Tests, Swing-Tipps, Reiseberichte und Platz-Guides – kuratiert von Aria, deiner IndiGolf-Begleiterin.
           </p>
           <div className={styles.heroActions}>
             <Link href="/blog" className="btn btn-primary">
-              Explore All Posts
+              Alle Beiträge
             </Link>
             <Link href="/about" className="btn btn-secondary">
-              Meet Aria
+              Aria kennenlernen
             </Link>
           </div>
           <div className={styles.heroStats}>
             <div className={styles.stat}>
-              <span className={styles.statNum}>Daily</span>
-              <span className={styles.statLabel}>New Posts</span>
+              <span className={styles.statNum}>Täglich</span>
+              <span className={styles.statLabel}>Neue Beiträge</span>
             </div>
             <div className={styles.statDivider} />
             <div className={styles.stat}>
               <span className={styles.statNum}>100%</span>
-              <span className={styles.statLabel}>Honest Reviews</span>
+              <span className={styles.statLabel}>Ehrliche Tests</span>
             </div>
             <div className={styles.statDivider} />
             <div className={styles.stat}>
-              <span className={styles.statNum}>AI</span>
-              <span className={styles.statLabel}>Powered Insights</span>
+              <span className={styles.statNum}>KI</span>
+              <span className={styles.statLabel}>Powered</span>
             </div>
           </div>
         </div>
@@ -65,8 +65,8 @@ export default function Home({ recentPosts }) {
       <section className={styles.section}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Latest from the Fairway</h2>
-            <p className={styles.sectionSub}>Fresh golf content, published daily by Aria</p>
+            <h2 className={styles.sectionTitle}>Aktuelles vom Fairway</h2>
+            <p className={styles.sectionSub}>Frische Golf-Inhalte, täglich von Aria</p>
           </div>
 
           {recentPosts.length > 0 ? (
@@ -77,13 +77,13 @@ export default function Home({ recentPosts }) {
             </div>
           ) : (
             <div className={styles.emptyState}>
-              <p>No posts yet — check back soon! Aria is warming up on the driving range. ⛳</p>
+              <p>Noch keine Beiträge – schau bald wieder vorbei! Aria wärmt sich gerade auf dem Übungsplatz auf. ⛳</p>
             </div>
           )}
 
           <div className={styles.viewAll}>
             <Link href="/blog" className="btn btn-outline">
-              View All Posts →
+              Alle Beiträge ansehen →
             </Link>
           </div>
         </div>
@@ -93,8 +93,8 @@ export default function Home({ recentPosts }) {
       <section className={`${styles.section} ${styles.categoriesSection}`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Browse by Topic</h2>
-            <p className={styles.sectionSub}>Find exactly what you&apos;re looking for</p>
+            <h2 className={styles.sectionTitle}>Nach Thema stöbern</h2>
+            <p className={styles.sectionSub}>Finde genau das, was du suchst</p>
           </div>
           <div className={styles.categoriesGrid}>
             {CATEGORIES.map(cat => (
@@ -112,14 +112,15 @@ export default function Home({ recentPosts }) {
       <section className={`${styles.section} ${styles.cassieSection}`}>
         <div className="container">
           <div className={styles.cassieCard}>
-            <div className={styles.cassieAvatar}>🏌️‍♀️</div>
+            {/* Aria image slot — replace src with generated image */}
+            <div className={styles.cassieAvatar} aria-hidden="true">🏌️‍♀️</div>
             <div className={styles.cassieContent}>
-              <h2 className={styles.cassieTitle}>Meet Aria, Your Golf Lifestyle Guide</h2>
+              <h2 className={styles.cassieTitle}>Triff Aria – deine Golf-Lifestyle-Begleiterin</h2>
               <p className={styles.cassieText}>
-                I&apos;m Aria — UX designer by day, golf addict by weekend. Handicap 18, based in Berlin, always planning the next golf trip. I test gear on the course, not in a lab, and I care just as much about the sunset view from the 18th green as the club in my hand. Golf is a lifestyle — and I&apos;m here to show you how to live it.
+                Ich bin Aria – UX Designerin unter der Woche, Golf-Süchtige am Wochenende. Handicap 18, Berlin, immer auf der Suche nach dem nächsten Golftrip. Ich teste Ausrüstung auf dem Platz, nicht im Labor, und mir ist der Sonnenuntergang auf dem 18. Green genauso wichtig wie der Schläger in der Hand. Golf ist ein Lebensgefühl – und ich zeige euch, wie man es lebt.
               </p>
               <Link href="/about" className="btn btn-primary">
-                My Story →
+                Meine Geschichte →
               </Link>
             </div>
           </div>
@@ -130,28 +131,28 @@ export default function Home({ recentPosts }) {
       <section className={`${styles.section} ${styles.shopSection}`}>
         <div className="container">
           <div className={styles.shopCta}>
-            <h2>Ready to Upgrade Your Game?</h2>
-            <p>Shop the best golf gear, hand-picked by Aria on Amazon</p>
+            <h2>Bereit, dein Spiel aufzurüsten?</h2>
+            <p>Die besten Golf-Produkte, handverlesen von Aria bei Amazon</p>
             <div className={styles.shopLinks}>
               <a
-                href="https://www.amazon.com/s?k=golf+clubs+set&tag=indigolf-20"
+                href="https://www.amazon.de/s?k=golfschlaeger+set&tag=indigolf-20"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="btn btn-primary"
               >
-                🏌️ Shop Club Sets
+                🏌️ Schläger & Sets
               </a>
               <a
-                href="https://www.amazon.com/s?k=golf+rangefinder&tag=indigolf-20"
+                href="https://www.amazon.de/s?k=golf+entfernungsmesser&tag=indigolf-20"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="btn btn-secondary"
               >
-                🎯 Rangefinders
+                🎯 Entfernungsmesser
               </a>
             </div>
             <p className={styles.shopDisclosure}>
-              Affiliate links — we earn a small commission at no cost to you.
+              Affiliate-Links – wir verdienen eine kleine Provision ohne Mehrkosten für euch.
             </p>
           </div>
         </div>
