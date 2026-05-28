@@ -22,36 +22,45 @@ export default function Home({ recentPosts }) {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
-          <div className={styles.heroBadge}>⛳ Golf & Lifestyle</div>
-          <h1 className={styles.heroTitle}>
-            Golf ist mehr als ein Sport. Es ist ein Lebensgefühl.
-          </h1>
-          <p className={styles.heroSubtitle}>
-            Ausrüstungs-Tests, Swing-Tipps, Reiseberichte und Platz-Guides – kuratiert von Aria, deiner IndiGolf-Begleiterin.
-          </p>
-          <div className={styles.heroActions}>
-            <Link href="/blog" className="btn btn-primary">
-              Alle Beiträge
-            </Link>
-            <Link href="/about" className="btn btn-secondary">
-              Aria kennenlernen
-            </Link>
+          <div className={styles.heroText}>
+            <div className={styles.heroBadge}>⛳ Golf & Lifestyle</div>
+            <h1 className={styles.heroTitle}>
+              Golf ist mehr als ein Sport. Es ist ein Lebensgefühl.
+            </h1>
+            <p className={styles.heroSubtitle}>
+              Ausrüstungs-Tests, Swing-Tipps, Reiseberichte und Platz-Guides – kuratiert von Aria, deiner IndiGolf-Begleiterin.
+            </p>
+            <div className={styles.heroActions}>
+              <Link href="/blog" className="btn btn-primary">
+                Alle Beiträge
+              </Link>
+              <Link href="/about" className="btn btn-secondary">
+                Aria kennenlernen
+              </Link>
+            </div>
+            <div className={styles.heroStats}>
+              <div className={styles.stat}>
+                <span className={styles.statNum}>Täglich</span>
+                <span className={styles.statLabel}>Neue Beiträge</span>
+              </div>
+              <div className={styles.statDivider} />
+              <div className={styles.stat}>
+                <span className={styles.statNum}>100%</span>
+                <span className={styles.statLabel}>Ehrliche Tests</span>
+              </div>
+              <div className={styles.statDivider} />
+              <div className={styles.stat}>
+                <span className={styles.statNum}>KI</span>
+                <span className={styles.statLabel}>Powered</span>
+              </div>
+            </div>
           </div>
-          <div className={styles.heroStats}>
-            <div className={styles.stat}>
-              <span className={styles.statNum}>Täglich</span>
-              <span className={styles.statLabel}>Neue Beiträge</span>
-            </div>
-            <div className={styles.statDivider} />
-            <div className={styles.stat}>
-              <span className={styles.statNum}>100%</span>
-              <span className={styles.statLabel}>Ehrliche Tests</span>
-            </div>
-            <div className={styles.statDivider} />
-            <div className={styles.stat}>
-              <span className={styles.statNum}>KI</span>
-              <span className={styles.statLabel}>Powered</span>
-            </div>
+          <div className={styles.heroImageWrap}>
+            <img
+              src="/images/aria_nach_dem_abschlag.jpg"
+              alt="Aria auf dem Golfplatz"
+              className={styles.heroImage}
+            />
           </div>
         </div>
         <div className={styles.heroWave} aria-hidden="true">
@@ -108,12 +117,36 @@ export default function Home({ recentPosts }) {
         </div>
       </section>
 
+      {/* Photo Gallery */}
+      <section className={styles.gallerySection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Aria auf dem Platz</h2>
+            <p className={styles.sectionSub}>Schnappschüsse aus dem Golfalltag</p>
+          </div>
+          <div className={styles.galleryGrid}>
+            <div className={styles.galleryItem}>
+              <img src="/images/aria_mit_range_finder.jpg" alt="Aria mit Entfernungsmesser" />
+            </div>
+            <div className={styles.galleryItem}>
+              <img src="/images/golfball_wandboard.jpg" alt="Golfball-Sammlung" />
+            </div>
+            <div className={styles.galleryItem}>
+              <img src="/images/schoenes_zimmer_mit_Fenster.jpg" alt="Clubhaus-Atmosphäre" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Aria Teaser */}
       <section className={`${styles.section} ${styles.cassieSection}`}>
         <div className="container">
           <div className={styles.cassieCard}>
-            {/* Aria image slot — replace src with generated image */}
-            <div className={styles.cassieAvatar} aria-hidden="true">🏌️‍♀️</div>
+            <img
+              src="/images/aria_mit_eisen_golfschlaeger.jpg"
+              alt="Aria mit Golfschläger"
+              className={styles.cassiePhoto}
+            />
             <div className={styles.cassieContent}>
               <h2 className={styles.cassieTitle}>Triff Aria – deine Golf-Lifestyle-Begleiterin</h2>
               <p className={styles.cassieText}>
