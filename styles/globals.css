@@ -197,6 +197,32 @@ hr {
   transform: translateY(-2px);
 }
 
+.btn-primary-glow {
+  background: #ffffff;
+  color: #0a0a0a;
+  border: 2px solid var(--color-neon-pink);
+  box-shadow: 0 0 18px var(--color-neon-pink-glow), 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.btn-primary-glow:hover {
+  background: #ffffff;
+  color: #0a0a0a;
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--color-neon-pink-glow), 0 6px 16px rgba(0,0,0,0.18);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  color: #0a0a0a;
+  border: 2px solid #0a0a0a;
+}
+
+.btn-outline-dark:hover {
+  background: #0a0a0a;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 .btn-outline {
   background: transparent;
   color: var(--color-secondary);

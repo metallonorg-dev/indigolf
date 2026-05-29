@@ -131,7 +131,7 @@
 
 /* Sections */
 .section {
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 
 .sectionHeader {
@@ -246,7 +246,7 @@
 
 /* Cassie Section */
 .cassieSection {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
 }
 
 .cassieCard {
@@ -297,7 +297,7 @@
 /* Shop */
 .shopSection {
   background: var(--color-bg-card);
-  padding: 4rem 0;
+  padding: 2.5rem 0;
 }
 
 .shopCta {
@@ -375,7 +375,7 @@
   }
 
   .section {
-    padding: 3.5rem 0;
+    padding: 2rem 0;
   }
 }
 
@@ -453,7 +453,7 @@
 
 /* Gallery */
 .gallerySection {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
 }
 
 .galleryGrid {

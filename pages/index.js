@@ -213,7 +213,7 @@ export default function Home({ recentPosts }) {
                 href="https://www.amazon.de/s?k=golfschlaeger+set&tag=indigolf-20"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="btn btn-primary"
+                className="btn btn-primary-glow"
               >
                 🏌️ Schläger & Sets
               </a>
@@ -221,7 +221,7 @@ export default function Home({ recentPosts }) {
                 href="https://www.amazon.de/s?k=golf+entfernungsmesser&tag=indigolf-20"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="btn btn-secondary"
+                className="btn btn-outline-dark"
               >
                 🎯 Entfernungsmesser
               </a>
