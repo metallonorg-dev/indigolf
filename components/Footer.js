@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-              <span>⛳</span> IndiGolf
+              IndiGolf
             </Link>
             <p className={styles.tagline}>
               Golf als Lebensgefühl – Tipps, Reiseberichte, Ausrüstungs-Tests und mehr. Kuratiert von Aria, deiner IndiGolf-Begleiterin.

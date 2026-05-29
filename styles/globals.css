@@ -204,8 +204,10 @@ hr {
 }
 
 .btn-outline:hover {
-  background: var(--color-secondary);
-  color: white;
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 12px rgba(82, 183, 136, 0.4);
   transform: translateY(-1px);
 }
 

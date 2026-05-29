@@ -2,7 +2,7 @@
 .hero {
   position: relative;
   background: linear-gradient(135deg, #0a0a0a 0%, #111111 60%, #0f0f0f 100%);
-  padding: 5rem 0 0;
+  padding: 2.5rem 0 0;
   overflow: hidden;
 }
 
@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   gap: 3rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   text-align: left;
 }
 
@@ -377,6 +377,78 @@
   .section {
     padding: 3.5rem 0;
   }
+}
+
+/* Friends */
+.friendsSection {
+  background: var(--color-bg-card);
+}
+
+.friendsGrid {
+  display: flex;
+  justify-content: center;
+}
+
+.friendCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 3rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 0 32px rgba(82, 183, 136, 0.12);
+}
+
+.friendName {
+  font-size: 1.75rem;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.friendDesc {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+  font-size: 0.95rem;
+}
+
+.friendLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.friendLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.friendLink:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: 0 0 12px rgba(82, 183, 136, 0.3);
+  transform: translateY(-2px);
+}
+
+.friendLink svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 /* Gallery */
