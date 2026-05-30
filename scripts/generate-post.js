@@ -276,10 +276,11 @@ WICHTIG: Schreibe ausschließlich auf Deutsch. Denke daran, das exakte Ausgabefo
   const filePath = path.join(POSTS_DIR, filename)
 
   // Check for duplicate
+  let finalFilePath = filePath
   if (fs.existsSync(filePath)) {
     console.log(`⚠️  Post already exists: ${filename}`)
     const altFilename = `${dateStr}-${titleSlug}-2.md`
-    const altFilePath = path.join(POSTS_DIR, altFilename)
+    finalFilePath = path.join(POSTS_DIR, altFilename)
     console.log(`   Saving as: ${altFilename}`)
   }
 
@@ -303,8 +304,8 @@ slug: "${titleSlug}"
 ${articleContent}
 `
 
-  fs.writeFileSync(filePath, markdownContent, 'utf8')
-  console.log(`✅ Post saved: content/posts/${filename}`)
+  fs.writeFileSync(finalFilePath, markdownContent, 'utf8')
+  console.log(`✅ Post saved: content/posts/${path.basename(finalFilePath)}`)
   console.log(`   Title: ${title}`)
   console.log(`   Category: ${postCategory}`)
   console.log(`   Slug: ${titleSlug}`)

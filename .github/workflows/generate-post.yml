@@ -52,8 +52,8 @@ jobs:
       - name: Commit and push new post
         if: steps.check-changes.outputs.has_changes == 'true'
         run: |
-          git config --local user.email "cassie@ki.indigolf.de"
-          git config --local user.name "Cassie (IndiGolf AI)"
+          git config --local user.email "aria@ki.indigolf.de"
+          git config --local user.name "Aria (IndiGolf AI)"
           git add content/posts/
           git commit -m "🏌️ Daily post: $(date +'%Y-%m-%d') [automated]"
           git push
